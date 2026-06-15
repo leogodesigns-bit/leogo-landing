@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo & Branding — Case Studies | Leogo Designs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:wght@400;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+:root{--red:#E8191A;--orange:#F5A623;--grad:linear-gradient(135deg,#E8191A 0%,#F5A623 100%);}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;background:rgba(0,0,0,0.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 48px;}
+.nav-logo{color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;font-weight:800;text-decoration:none;letter-spacing:-0.02em;}
+.nav-back{color:rgba(255,255,255,0.4);font-size:0.82rem;text-decoration:none;transition:color 0.2s;}
+.nav-back:hover{color:var(--orange);}
+
+.hero{padding:140px 48px 80px;max-width:1160px;margin:0 auto;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;}
+.hero-eyebrow::before{content:'';width:28px;height:2px;background:var(--grad);border-radius:1px;}
+.hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.0;letter-spacing:-0.03em;margin-bottom:1.2rem;}
+.hero h1 .italic{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{color:rgba(255,255,255,0.4);font-size:0.95rem;max-width:480px;line-height:1.8;}
+
+.grid-section{max-width:1160px;margin:0 auto;padding:0 48px 8rem;}
+.filter-row{display:flex;gap:0.75rem;margin-bottom:3rem;flex-wrap:wrap;}
+.filter-btn{padding:0.45rem 1.1rem;border-radius:999px;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;cursor:pointer;border:1px solid rgba(255,255,255,0.12);background:transparent;color:rgba(255,255,255,0.5);transition:all 0.2s;}
+.filter-btn.active,.filter-btn:hover{background:var(--grad);color:#fff;border-color:transparent;}
+
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.work-card{border-radius:20px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.06);text-decoration:none;display:block;transition:transform 0.3s,box-shadow 0.3s;position:relative;}
+.work-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px -20px rgba(0,0,0,0.6);}
+.work-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);opacity:0;transition:opacity 0.3s;}
+.work-card:hover::before{opacity:1;}
+.card-thumb{width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.card-thumb img{width:100%;height:100%;object-fit:cover;}
+.card-thumb-placeholder{width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;}
+.card-body{padding:1.4rem 1.5rem 1.6rem;}
+.card-tag{font-size:0.62rem;color:var(--red);text-transform:uppercase;letter-spacing:0.14em;font-weight:600;margin-bottom:0.5rem;}
+.card-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.2rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:0.3rem;}
+.card-desc{font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.6;}
+.card-arrow{position:absolute;top:1.4rem;right:1.4rem;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.work-card:hover .card-arrow{background:var(--grad);}
+.card-arrow svg{width:14px;height:14px;color:#fff;}
+
+.coming-soon{opacity:0.35;pointer-events:none;}
+
+.cta-strip{background:#000;border-top:1px solid rgba(255,255,255,0.06);padding:5rem 48px;text-align:center;}
+.cta-strip h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-0.025em;margin-bottom:0.8rem;}
+.cta-strip h2 .italic{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.cta-strip p{color:rgba(255,255,255,0.35);font-size:0.88rem;margin-bottom:2rem;}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--grad);color:#fff;padding:0.9rem 2.2rem;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.9rem;box-shadow:0 12px 40px -10px rgba(232,25,26,0.5);transition:transform 0.2s;}
+.cta-btn:hover{transform:translateY(-2px);}
+
+@media(max-width:900px){.nav{padding:0 24px;}.hero,.grid-section{padding-left:24px;padding-right:24px;}.work-grid{grid-template-columns:repeat(2,1fr);}.cta-strip{padding:4rem 24px;}}
+@media(max-width:600px){.work-grid{grid-template-columns:1fr;}.hero{padding-top:110px;}}
+
+  .nav { position:fixed;top:0;left:0;right:0;z-index:100;height:96px;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);overflow:visible; }
+  .nav-inner { height:100%;display:flex;justify-content:space-between;align-items:center;padding:0 48px 0 16px;overflow:visible; }
+  .nav-logo { display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;line-height:0;padding-left:24px;margin-top:80px;overflow:visible; }
+  .nav-logo img { display:block;height:140px;width:auto;mix-blend-mode:screen; }
+  .nav-links { display:flex;align-items:center;gap:36px; }
+  .nav-links a { font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s; }
+  .nav-links a:hover { color:#fff; }
+  .nav-cta { background:linear-gradient(135deg,#E8191A 0%,#F5A623 100%);color:#fff!important;padding:10px 22px;border-radius:999px;font-size:14px;font-weight:600;box-shadow:0 8px 24px -8px rgba(232,25,26,0.5); }
+  .nav-toggle { display:none;background:transparent;border:none;padding:0;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;cursor:pointer; }
+  .nav-toggle span { display:block;width:22px;height:1.5px;background:#fff;margin:3px 0;transition:0.3s; }
+.nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    height: 96px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    overflow: visible;
+  }
+  .nav-inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px;
+    padding-left: 16px;
+    overflow: visible;
+  }
+  .nav-logo {
+    display: inline-flex; align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    line-height: 0;
+    padding-left: 24px;
+    margin-top: 80px;
+    overflow: visible;
+  }
+  .nav-logo img {
+    display: block;
+    height: 140px;
+    width: auto;
+    mix-blend-mode: screen;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../leogo_logo.png" alt="Leogo Designs" />
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#vaani">Vaani AI</a>
+      <a href="index.html" style="color:#fff;">Work</a>
+      <a href="../index.html#clients">Clients</a>
+      <a href="../index.html#about">About</a>
+      <a href="https://wa.me/919272445612?text=Hi%20Leogo%20Designs%2C%20I%27d%20like%20to%20discuss%20a%20project" class="nav-cta" target="_blank" rel="noopener">Let's Talk</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Our work</div>
+  <h1>Logo &amp;<br><span class="italic">Branding</span></h1>
+  <p class="hero-sub">Identity systems built to last — from the first sketch to the final brand book. Every project below is a real brand we built from scratch.</p>
+</div>
+
+<div class="grid-section">
+  <div class="filter-row">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Sarees / Fashion</button>
+    <button class="filter-btn">F&amp;B</button>
+    <button class="filter-btn">Jewellery</button>
+    <button class="filter-btn">Retail</button>
+  </div>
+
+  <div class="work-grid">
+
+    <!-- RAJATHEE -->
+    <a href="../case-studies/rajathee.html" class="work-card">
+      <div class="card-thumb-placeholder" style="background:#1a204b;">
+        <span style="font-family:Georgia,serif;font-size:2.2rem;color:#d4b56c;font-weight:700;">Rajathee</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Sarees · Fashion · 2026</div>
+        <div class="card-title">Rajathee Sarees</div>
+        <div class="card-desc">Heritage serif wordmark in Indigo + Royal Gold. Logo, monogram, stationery.</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <!-- IKAA -->
+    <a href="#" class="work-card coming-soon">
+      <div class="card-thumb-placeholder" style="background:#080808;">
+        <span style="font-family:serif;font-size:1.8rem;color:#c0a060;letter-spacing:0.1em;">ई</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Jewellery · 2024</div>
+        <div class="card-title">Ikaa Jewellery</div>
+        <div class="card-desc">Chrome Devanagari wordmark. Dual metal system. Full brand identity.</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <!-- WOOF PARADE -->
+    <a href="#" class="work-card coming-soon">
+      <div class="card-thumb-placeholder" style="background:#111;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;font-weight:900;color:#fff;letter-spacing:-0.02em;">Woof Parade</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Pet · Dog Apparel · 2024</div>
+        <div class="card-title">The Woof Parade</div>
+        <div class="card-desc">Playful brand identity for India's premium dog jersey brand.</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <!-- KORA -->
+    <a href="#" class="work-card coming-soon">
+      <div class="card-thumb-placeholder" style="background:#0d0d0d;">
+        <span style="font-family:serif;font-size:1.6rem;color:#c8b89a;letter-spacing:0.08em;">Kora</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Jewellery · Fine Art</div>
+        <div class="card-title">Kora Fine Art Jewellery</div>
+        <div class="card-desc">Minimal luxury identity for a handcrafted fine art jewellery label.</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <!-- YOGITA -->
+    <a href="#" class="work-card coming-soon">
+      <div class="card-thumb-placeholder" style="background:#1a0a0a;">
+        <span style="font-family:serif;font-size:1.4rem;color:#e8c4a0;font-style:italic;">Yogita</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Beauty · MUA</div>
+        <div class="card-title">Yogita MUA</div>
+        <div class="card-desc">Personal brand identity for a professional makeup artist.</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <!-- IDRC -->
+    <a href="#" class="work-card coming-soon">
+      <div class="card-thumb-placeholder" style="background:#0a1a0a;">
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:900;color:#4ade80;letter-spacing:0.05em;">IDRC</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">F&amp;B · South Indian Café</div>
+        <div class="card-title">IDRC</div>
+        <div class="card-desc">Brand identity for a South Indian café chain in Satara.</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+  </div>
+</div>
+
+<div class="cta-strip">
+  <h2>Ready to build your <span class="italic">brand?</span></h2>
+  <p>Logos starting at ₹4,000 · Delivered in 5–7 days · 2 revision rounds</p>
+  <a href="https://wa.me/919272445612?text=Hi%2C%20I%20saw%20your%20work%20and%20I%27m%20interested%20in%20a%20logo%20for%20my%20brand." class="cta-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Start a project
+  </a>
+</div>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

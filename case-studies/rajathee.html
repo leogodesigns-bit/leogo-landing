@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajathee — Logo Case Study | Leogo Designs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:wght@400;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E8191A;--orange:#F5A623;--grad:linear-gradient(135deg,#E8191A 0%,#F5A623 100%);--navy:#1a204b;--gold:#d4b56c;--ivory:#f8f2ea;--soft:#faf8f5;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;background:rgba(0,0,0,0.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 48px;}
+.nav-logo{color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;font-weight:800;text-decoration:none;letter-spacing:-0.02em;}
+.nav-back{color:rgba(255,255,255,0.4);font-size:0.82rem;text-decoration:none;transition:color 0.2s;}
+.nav-back:hover{color:var(--orange);}
+.hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 48px 72px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(212,181,108,0.18) 0%,transparent 55%);pointer-events:none;}
+.hero-pill{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:7px 18px;border:1px solid transparent;background:linear-gradient(var(--navy),var(--navy)) padding-box,linear-gradient(90deg,var(--red),var(--orange)) border-box;border-radius:999px;margin-bottom:2.5rem;position:relative;}
+.hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(4.5rem,11vw,9rem);font-weight:900;line-height:0.95;letter-spacing:-0.03em;color:var(--gold);margin-bottom:1.5rem;position:relative;}
+.hero-tagline{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(0.95rem,2vw,1.3rem);color:rgba(212,181,108,0.4);margin-bottom:3.5rem;position:relative;}
+.hero-divider{width:48px;height:2px;background:rgba(212,181,108,0.3);margin:0 auto 3.5rem;position:relative;}
+.hero-meta{display:flex;gap:3.5rem;justify-content:center;flex-wrap:wrap;position:relative;}
+.hero-meta-item .label{color:rgba(255,255,255,0.3);font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.35rem;}
+.hero-meta-item .value{color:rgba(255,255,255,0.8);font-size:0.88rem;font-weight:500;}
+.section-light{background:var(--soft);}
+.section-dark{background:#0a0a0a;}
+.section-navy{background:var(--navy);}
+.section-inner{max-width:1160px;margin:0 auto;padding:7rem 48px;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--grad);border-radius:1px;}
+.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.025em;margin-bottom:1rem;}
+.section-title .italic{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.on-light{color:#0a0a0a;}
+.on-dark{color:#fff;}
+.on-navy{color:var(--ivory);}
+.section-body{font-size:0.95rem;line-height:1.85;max-width:540px;font-weight:300;}
+.body-light{color:#666;}
+.body-dark{color:rgba(255,255,255,0.45);}
+.body-navy{color:rgba(248,242,234,0.45);}
+.brief-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:3rem;background:#e5e0d8;border-radius:16px;overflow:hidden;}
+.brief-card{background:#fff;padding:1.8rem;}
+.brief-card .bc-label{font-size:0.62rem;color:#aaa;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.5rem;}
+.brief-card .bc-value{font-size:0.9rem;color:#111;font-weight:600;}
+.concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.concept-card{border-radius:20px;overflow:hidden;}
+.concept-display{height:220px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.8rem;}
+.concept-info{background:#fff;padding:1.3rem 1.5rem;}
+.concept-info .cn{font-size:0.62rem;color:#bbb;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.3rem;}
+.concept-info .ct{font-size:0.92rem;font-weight:700;color:#111;}
+.concept-info .cd{font-size:0.78rem;color:#888;margin-top:0.25rem;}
+.c1{background:var(--navy);}
+.c1-text{font-family:'Brush Script MT',cursive;font-size:3rem;color:var(--gold);}
+.c2{background:var(--ivory);}
+.c2-text{font-family:Georgia,serif;font-size:2.4rem;color:var(--navy);}
+.c2-dot{color:var(--gold);}
+.c3{background:var(--navy);outline:2px solid var(--gold);outline-offset:-2px;}
+.c3-text{font-family:Georgia,serif;font-size:2.6rem;color:var(--gold);font-weight:700;}
+.chosen-pill{background:var(--grad);color:#fff;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:999px;font-family:'Inter',sans-serif;}
+.scroll-label{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#aaa;margin:2.5rem 0 0.9rem;display:flex;align-items:center;gap:0.8rem;}
+.scroll-label::after{content:'';flex:1;height:1px;background:#e0ddd8;}
+.scroll-label.dark-line::after{background:rgba(255,255,255,0.1);}
+.scroll-strip{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:0.5rem;}
+.scroll-strip::-webkit-scrollbar{display:none;}
+.scroll-strip img{flex:0 0 auto;width:60%;max-width:680px;height:360px;object-fit:cover;border-radius:14px;scroll-snap-align:start;}
+.color-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;}
+.color-swatch{border-radius:16px;overflow:hidden;aspect-ratio:2/3;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;}
+.sw-word{font-family:Georgia,serif;font-size:1.4rem;}
+.sw-label{position:absolute;bottom:1rem;left:0;right:0;text-align:center;font-family:'Inter',sans-serif;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;}
+.final-logo-block{background:rgba(255,255,255,0.04);border:1px solid rgba(212,181,108,0.2);border-radius:24px;padding:5rem 3rem;text-align:center;margin-top:3rem;}
+.final-wordmark{font-family:Georgia,serif;font-size:clamp(3.5rem,8vw,6.5rem);color:var(--gold);font-weight:700;display:block;margin-bottom:0.8rem;letter-spacing:-0.02em;}
+.final-sub{font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(212,181,108,0.35);margin-bottom:2.5rem;}
+.final-chips{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
+.chip{border-radius:999px;padding:0.45rem 1.1rem;font-size:0.7rem;letter-spacing:0.05em;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);}
+.bg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
+.bg-block{border-radius:14px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+.bg-word{font-family:Georgia,serif;font-size:1.4rem;}
+.bg-label{font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.35;font-family:'Inter',sans-serif;}
+.deck-strip{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:0.5rem;margin-top:2.5rem;}
+.deck-strip::-webkit-scrollbar{display:none;}
+.deck-strip img{flex:0 0 auto;width:44%;border-radius:12px;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);object-fit:cover;}
+.palette-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.palette-block{border-radius:18px;overflow:hidden;}
+.palette-color{height:140px;}
+.palette-info{background:#fff;padding:1.3rem 1.5rem;}
+.palette-info .p-name{font-size:0.95rem;font-weight:700;color:#111;margin-bottom:0.2rem;}
+.palette-info .p-hex{font-size:0.72rem;color:#aaa;letter-spacing:0.08em;margin-bottom:0.3rem;}
+.palette-info .p-use{font-size:0.7rem;color:#bbb;}
+.collateral-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.collateral-card{border-radius:20px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.06);transition:transform 0.3s;}
+.collateral-card:hover{transform:translateY(-4px);}
+.collateral-card img{width:100%;height:240px;object-fit:cover;display:block;}
+.collateral-card .cc-info{padding:1.2rem 1.4rem;}
+.collateral-card .cc-label{font-size:0.6rem;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.3rem;}
+.collateral-card .cc-title{font-size:0.92rem;font-weight:600;color:rgba(255,255,255,0.85);}
+.cta-section{background:#000;padding:7rem 48px;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(232,25,26,0.22) 0%,transparent 60%);pointer-events:none;}
+.cta-section h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-0.025em;color:#fff;margin-bottom:1rem;position:relative;}
+.cta-section h2 .italic{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.cta-sub{color:rgba(255,255,255,0.35);font-size:0.88rem;margin-bottom:2.5rem;position:relative;}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--grad);color:#fff;padding:1rem 2.5rem;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.95rem;box-shadow:0 12px 40px -10px rgba(232,25,26,0.55);transition:transform 0.2s,box-shadow 0.2s;position:relative;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 18px 50px -10px rgba(232,25,26,0.8);}
+@media(max-width:900px){.nav{padding:0 24px;}.section-inner{padding:5rem 24px;}.brief-grid{grid-template-columns:repeat(2,1fr);}.concepts{grid-template-columns:1fr;}.color-grid{grid-template-columns:repeat(2,1fr);}.bg-grid{grid-template-columns:repeat(2,1fr);}.palette-row{grid-template-columns:1fr;}.collateral-grid{grid-template-columns:1fr;}.hero{padding:90px 24px 56px;}.hero-meta{gap:2rem;}.cta-section{padding:5rem 24px;}}
+@media(max-width:600px){.scroll-strip img{width:88%;}.deck-strip img{width:88%;}.hero h1{font-size:clamp(3.5rem,16vw,6rem);}.brief-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">Leogo</a>
+  <a href="../index.html" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-pill">Logo & Brand Identity · 2026</div>
+  <h1>Rajathee</h1>
+  <p class="hero-tagline">Effortless and Elegant Sarees for Women on the Move</p>
+  <div class="hero-divider"></div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="label">Category</div><div class="value">Sarees / Fashion</div></div>
+    <div class="hero-meta-item"><div class="label">Deliverable</div><div class="value">Logo + Brand Identity</div></div>
+    <div class="hero-meta-item"><div class="label">Tone</div><div class="value">Modern · Minimal · Elegant</div></div>
+    <div class="hero-meta-item"><div class="label">Studio</div><div class="value">Leogo Designs</div></div>
+  </div>
+</section>
+
+<div class="section-light">
+<div class="section-inner">
+  <div class="eyebrow">01 — The Brief</div>
+  <h2 class="section-title on-light">A saree brand for the <span class="italic">modern woman</span></h2>
+  <p class="section-body body-light">Rajathee needed a logo that felt contemporary and premium — not traditional or heavy. Women 25+, digitally active, buying sarees for work and occasions. The brand had to hold up across Instagram, Shopify, packaging, and invoices.</p>
+  <div class="brief-grid">
+    <div class="brief-card"><div class="bc-label">Audience</div><div class="bc-value">Women 25+</div></div>
+    <div class="brief-card"><div class="bc-label">Palette</div><div class="bc-value">Royal Blue · Gold · Ivory</div></div>
+    <div class="brief-card"><div class="bc-label">Avoid</div><div class="bc-value">Black & Red</div></div>
+    <div class="brief-card"><div class="bc-label">Usage</div><div class="bc-value">Instagram · Website · Packaging</div></div>
+  </div>
+</div>
+</div>
+
+<div class="section-light">
+<div class="section-inner" style="padding-top:0;">
+  <div class="eyebrow">02 — Concepts Presented</div>
+  <h2 class="section-title on-light">Three directions, <span class="italic">one vision</span></h2>
+  <p class="section-body body-light">Each concept explored a different facet of the brand — from flowing couture to structured luxury to heritage elegance.</p>
+  <div class="concepts">
+    <div class="concept-card">
+      <div class="concept-display c1"><span class="c1-text">Rajathee</span></div>
+      <div class="concept-info"><div class="cn">Concept 01</div><div class="ct">Signature Couture Wordmark</div><div class="cd">Flowing script — intimate, handcrafted feel</div></div>
+    </div>
+    <div class="concept-card">
+      <div class="concept-display c2"><span class="c2-text">Ra<span class="c2-dot">◆</span>jathee</span></div>
+      <div class="concept-info"><div class="cn">Concept 02</div><div class="ct">Minimal Luxury Wordmark</div><div class="cd">Clean serif with a subtle gold accent mark</div></div>
+    </div>
+    <div class="concept-card">
+      <div class="concept-display c3"><span class="chosen-pill">✓ Chosen</span><span class="c3-text">Rajathee</span></div>
+      <div class="concept-info"><div class="cn">Concept 03</div><div class="ct">Heritage Serif Wordmark</div><div class="cd">Bold, editorial, timeless — maximum impact</div></div>
+    </div>
+  </div>
+  <div class="scroll-label">Full logo options deck</div>
+  <div class="scroll-strip">
+    <img src="rajathee-assets/options-1.png" alt="Logo options">
+    <img src="rajathee-assets/options-2.png" alt="Logo colour variations">
+  </div>
+</div>
+</div>
+
+<div class="section-dark">
+<div class="section-inner">
+  <div class="eyebrow">03 — Colour Explorations</div>
+  <h2 class="section-title on-dark">Finding the <span class="italic">right palette</span></h2>
+  <p class="section-body body-dark">Concept 03 tested across wine reds, sapphire blues, and navy + gold combinations before landing on Indigo Maharani.</p>
+  <div class="color-grid">
+    <div class="color-swatch" style="background:#6b1a2e;"><span class="sw-word" style="color:#c9a84c;">Rajathee</span><span class="sw-label" style="color:rgba(255,255,255,0.5);">Royal Wine</span></div>
+    <div class="color-swatch" style="background:#4a0e1f;"><span class="sw-word" style="color:#b8934a;">Rajathee</span><span class="sw-label" style="color:rgba(255,255,255,0.5);">Deep Garnet</span></div>
+    <div class="color-swatch" style="background:#1a204b;"><span class="sw-word" style="color:#d4b56c;">Rajathee</span><span class="sw-label" style="color:rgba(255,255,255,0.5);">Midnight Royal</span></div>
+    <div class="color-swatch" style="background:#2a3a6b;"><span class="sw-word" style="color:#d4b56c;">Rajathee</span><span class="sw-label" style="color:rgba(255,255,255,0.5);">Sapphire Court</span></div>
+  </div>
+</div>
+</div>
+
+<div class="section-navy">
+<div class="section-inner">
+  <div class="eyebrow">04 — Final Logo</div>
+  <h2 class="section-title on-navy">Indigo <span class="italic">Maharani</span></h2>
+  <p class="section-body body-navy">The final logo captures the effortless elegance Rajathee stands for — equally at home on ivory packaging, dark digital backgrounds, and single-colour print.</p>
+  <div class="final-logo-block">
+    <span class="final-wordmark">Rajathee</span>
+    <div class="final-sub">Sarees · Est. 2026</div>
+    <div class="final-chips">
+      <span class="chip">Indigo #1a204b</span>
+      <span class="chip" style="color:var(--gold);border-color:rgba(212,181,108,0.25);">Royal Gold #d4b56c</span>
+      <span class="chip" style="color:var(--ivory);">Ivory #f8f2ea</span>
+    </div>
+  </div>
+  <div class="bg-grid">
+    <div class="bg-block" style="background:rgba(255,255,255,0.05);"><span class="bg-word" style="color:var(--gold);">Rajathee</span><span class="bg-label" style="color:rgba(255,255,255,0.3);">On Indigo</span></div>
+    <div class="bg-block" style="background:var(--ivory);"><span class="bg-word" style="color:var(--navy);">Rajathee</span><span class="bg-label" style="color:#aaa;">On Ivory</span></div>
+    <div class="bg-block" style="background:var(--gold);"><span class="bg-word" style="color:var(--navy);">Rajathee</span><span class="bg-label" style="color:rgba(26,32,75,0.45);">On Gold</span></div>
+  </div>
+  <div class="scroll-label dark-line" style="color:rgba(248,242,234,0.25);">Final delivery deck</div>
+  <div class="deck-strip">
+    <img src="rajathee-assets/final-2.png" alt="Final logo primary">
+    <img src="rajathee-assets/final-3.png" alt="Alternate backgrounds">
+    <img src="rajathee-assets/final-4.png" alt="Secondary logo">
+    <img src="rajathee-assets/final-5.png" alt="Monogram">
+    <img src="rajathee-assets/final-6.png" alt="Monogram stamp">
+    <img src="rajathee-assets/final-7.png" alt="Colour palette guide">
+    <img src="rajathee-assets/final-8.png" alt="Print version">
+  </div>
+</div>
+</div>
+
+<div class="section-light">
+<div class="section-inner">
+  <div class="eyebrow">05 — Brand Palette</div>
+  <h2 class="section-title on-light">Three colours. <span class="italic">One identity.</span></h2>
+  <p class="section-body body-light">Indigo anchors authority. Gold adds aspiration. Ivory keeps it light and wearable — perfect for saree packaging and digital use.</p>
+  <div class="palette-row">
+    <div class="palette-block"><div class="palette-color" style="background:#1a204b;"></div><div class="palette-info"><div class="p-name">Indigo</div><div class="p-hex">#1a204b</div><div class="p-use">Primary · Logo · Text</div></div></div>
+    <div class="palette-block"><div class="palette-color" style="background:#d4b56c;"></div><div class="palette-info"><div class="p-name">Royal Gold</div><div class="p-hex">#d4b56c</div><div class="p-use">Accent · Borders · Icons</div></div></div>
+    <div class="palette-block"><div class="palette-color" style="background:#f8f2ea;border:1px solid #e8e2d8;"></div><div class="palette-info"><div class="p-name">Ivory / Cream</div><div class="p-hex">#f8f2ea</div><div class="p-use">Background · Tags · Print</div></div></div>
+  </div>
+</div>
+</div>
+
+<div class="section-dark">
+<div class="section-inner">
+  <div class="eyebrow">06 — Collaterals</div>
+  <h2 class="section-title on-dark">The brand, <span class="italic">applied.</span></h2>
+  <p class="section-body body-dark">Post logo approval, Leogo extended the identity across business stationery — letterhead, visiting card, and bill book.</p>
+  <div class="collateral-grid">
+    <div class="collateral-card"><img src="rajathee-assets/letterhead.jpg" alt="Rajathee Letterhead"><div class="cc-info"><div class="cc-label">Stationery</div><div class="cc-title">Letterhead</div></div></div>
+    <div class="collateral-card"><img src="rajathee-assets/visiting-card.jpg" alt="Rajathee Visiting Card"><div class="cc-info"><div class="cc-label">Stationery</div><div class="cc-title">Visiting Card</div></div></div>
+    <div class="collateral-card"><img src="rajathee-assets/billbook.jpg" alt="Rajathee Bill Book"><div class="cc-info"><div class="cc-label">Stationery</div><div class="cc-title">Bill Book</div></div></div>
+  </div>
+</div>
+</div>
+
+<div class="cta-section">
+  <h2>Want a brand identity<br>like <span class="italic">this?</span></h2>
+  <p class="cta-sub">Logos starting at ₹4,000 · 2 revision rounds · Delivered in 5–7 days</p>
+  <a href="https://wa.me/919272445612?text=Hi%2C%20I%20saw%20the%20Rajathee%20case%20study%20and%20I%27m%20interested%20in%20a%20logo%20for%20my%20brand." class="cta-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Chat on WhatsApp
+  </a>
+</div>
+</body>
+</html>
