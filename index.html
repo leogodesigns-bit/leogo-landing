@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Leogo Designs — We Build Brands That Mean Business</title>
-<meta name="description" content="Design + tech agency based in Satara & Pune. Branding, social media, Shopify websites, and Vaani — our AI WhatsApp sales bot." />
+<meta name="description" content="Design + tech agency based in Satara & Pune. Branding, social media, Shopify websites, and in-house products — Vaani (AI WhatsApp sales bot), Dor (Shopify ↔ Google Sheets sync), and Setu (fast Shopify checkout)." />
 <link rel="icon" type="image/png" href="leogo_final_logo_11-01.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -509,6 +509,8 @@
     font-size: 1.4rem; font-weight: 700; color: var(--white);
     margin-bottom: 12px; letter-spacing: -0.015em;
   }
+  .service-card h3 a { color: inherit; text-decoration: none; }
+  .service-card h3 a:hover { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .service-card p {
     color: rgba(255,255,255,0.6); font-size: 14.5px; margin-bottom: 28px;
     line-height: 1.6;
@@ -1324,7 +1326,7 @@
       <div class="stat"><div class="num" data-target="6" data-suffix="+">0+</div><div class="label">Years</div></div>
       <div class="stat"><div class="num" data-target="30" data-suffix="+">0+</div><div class="label">Brands</div></div>
       <div class="stat"><div class="num" data-target="2" data-suffix="">0</div><div class="label">Cities</div></div>
-      <div class="stat"><div class="num" data-target="1" data-suffix="">0</div><div class="label">AI Product</div></div>
+      <div class="stat"><div class="num" data-target="3" data-suffix="">0</div><div class="label">SaaS Products</div></div>
     </div>
   </div>
 </header>
@@ -1383,24 +1385,24 @@
         </div>
       </div>
 
-      <div class="service-card tilt reveal d4">
+      <div class="service-card tilt reveal d4" style="cursor:pointer;" onclick="window.open('https://dor-app-production.up.railway.app','_blank','noopener')">
         <span class="service-num">05</span>
         <div class="service-card-inner">
-          <h3>Dor</h3>
+          <h3><a href="https://dor-app-production.up.railway.app" target="_blank" rel="noopener" data-hover>Dor</a></h3>
           <p>Connect your store to Google Sheets. Pull, edit, push. Sync inventory and pricing between Shopify and a spreadsheet — bulk-edit stock and prices in Sheets, then push changes live to your store in one click.</p>
           <div class="service-price custom">
-            <span class="amt">Custom pricing →</span>
+            <span class="amt">Learn more →</span>
           </div>
         </div>
       </div>
 
-      <div class="service-card tilt reveal d4">
+      <div class="service-card tilt reveal d4" style="cursor:pointer;" onclick="window.open('https://setu.leogo.in','_blank','noopener')">
         <span class="service-num">06</span>
         <div class="service-card-inner">
-          <h3>Setu</h3>
+          <h3><a href="https://setu.leogo.in" target="_blank" rel="noopener" data-hover>Setu</a></h3>
           <p>A one-page checkout built for Indian brands. Phone-OTP login, instant address autofill, and UPI / COD / card payments via Razorpay — with saved addresses that follow shoppers across every store on Setu.</p>
           <div class="service-price custom">
-            <span class="amt">Custom pricing →</span>
+            <span class="amt">Learn more →</span>
           </div>
         </div>
       </div>
