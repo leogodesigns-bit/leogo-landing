@@ -5,18 +5,149 @@
     "title": "Pet Genie logo",
     "type": "Logo & branding",
     "year": "2026",
-    "cover": "/assets/work/petgenie/10.jpg",
-    "summary": "Brand identity for a pet-care app: one brief, three directions, five rounds, one logo the client loved.",
-    "steps": [
-      { "heading": "The brief", "text": "Pet parents aged 20 to 40, premium but not cartoony, modern, earthy and fun.", "image": "/assets/work/petgenie/2.jpg" },
-      { "heading": "Three directions", "text": "A friendly genie character, dog-ear lettering, and a dog icon.", "image": "/assets/work/petgenie/3.jpg" },
-      { "heading": "The pick", "text": "The client loved the genie and the lettering with the dog ears, and asked for a mix of both.", "image": "/assets/work/petgenie/4.jpg" },
-      { "heading": "Make it simpler", "text": "Fewer details, same smile, so it works as an app icon.", "image": "/assets/work/petgenie/5.jpg" },
-      { "heading": "The best of both", "text": "The paw from one genie, the ponytail from the other.", "image": "/assets/work/petgenie/6.jpg" },
-      { "heading": "Ears, or no ears", "text": "Two versions: ears when the name stands alone, clean letters beside the genie.", "image": "/assets/work/petgenie/8.jpg" },
-      { "heading": "The colour", "text": "Forest green, mustard, rose and cream, tested across the whole set.", "image": "/assets/work/petgenie/9.jpg" }
-    ],
-    "reel": "/assets/work/petgenie/reel.mp4"
+    "cover": "/assets/work/petgenie/final_icon.jpg",
+    "summary": "An identity for a pet-care app: one brief, three directions, five rounds, and a genie the client loved.",
+    "blocks": [
+      {
+        "type": "hero",
+        "bg": "#224443",
+        "image": "/assets/work/petgenie/fin_green.jpg",
+        "alt": "Pet Genie logo lockup on forest green"
+      },
+      {
+        "type": "brief",
+        "title": "The brief",
+        "items": [
+          [
+            "Client",
+            "Pet Genie, an app to book pet services, find vets and keep a digital health passport"
+          ],
+          [
+            "Tagline",
+            "For all that comes with a wag"
+          ],
+          [
+            "For",
+            "Pet parents, 20 to 40"
+          ],
+          [
+            "Feel",
+            "Modern, earthy, fun. Premium, not cartoony"
+          ],
+          [
+            "Scope",
+            "Logo, app icon, wordmark, colour"
+          ]
+        ]
+      },
+      {
+        "type": "row",
+        "title": "Three directions",
+        "text": "We opened with three different ideas instead of three versions of one.",
+        "items": [
+          {
+            "image": "/assets/work/petgenie/c1.jpg",
+            "caption": "A friendly genie hugging a paw"
+          },
+          {
+            "image": "/assets/work/petgenie/c2.jpg",
+            "caption": "Lettering with a floppy dog ear"
+          },
+          {
+            "image": "/assets/work/petgenie/c3.jpg",
+            "caption": "A dog icon beside the name"
+          }
+        ],
+        "fit": "wide"
+      },
+      {
+        "type": "row",
+        "title": "From the pick to the final",
+        "text": "The client loved the genie and the dog-ear lettering. We simplified the genie until it worked as an app icon, then took the paw from one version and the ponytail from another.",
+        "items": [
+          {
+            "image": "/assets/work/petgenie/var_1.jpg",
+            "caption": "The pick"
+          },
+          {
+            "image": "/assets/work/petgenie/simp_1.jpg",
+            "caption": "Simpler"
+          },
+          {
+            "image": "/assets/work/petgenie/simp_2.jpg",
+            "caption": "Simpler, take two"
+          },
+          {
+            "image": "/assets/work/petgenie/merge_2.jpg",
+            "caption": "The best of both"
+          }
+        ]
+      },
+      {
+        "type": "feature",
+        "title": "The identity",
+        "main": {
+          "image": "/assets/work/petgenie/final_icon.jpg",
+          "caption": "App icon"
+        },
+        "items": [
+          {
+            "image": "/assets/work/petgenie/final_word.jpg",
+            "caption": "Wordmark with tagline"
+          },
+          {
+            "image": "/assets/work/petgenie/lock_darkgreen.jpg",
+            "caption": "Lockup"
+          },
+          {
+            "image": "/assets/work/petgenie/fin_yellow.jpg",
+            "caption": "Lockup on mustard"
+          }
+        ]
+      },
+      {
+        "type": "palette",
+        "title": "Colour",
+        "colors": [
+          [
+            "#1C4946",
+            "Forest"
+          ],
+          [
+            "#EBB24F",
+            "Mustard"
+          ],
+          [
+            "#E7657A",
+            "Rose"
+          ],
+          [
+            "#F8F2EA",
+            "Cream"
+          ]
+        ]
+      },
+      {
+        "type": "row",
+        "title": "In use",
+        "items": [
+          {
+            "image": "/assets/work/petgenie/icon_grid.jpg",
+            "caption": "The icon in eight colourways"
+          },
+          {
+            "image": "/assets/work/petgenie/dock.jpg",
+            "caption": "The app icon, next to the other directions we tried"
+          }
+        ]
+      },
+      {
+        "type": "video",
+        "title": "Watch how it came together",
+        "src": "/assets/work/petgenie/reel.mp4",
+        "poster": "/assets/work/petgenie/reel-poster.jpg"
+      }
+    ]
   },
   {
     "slug": "rajathee",

@@ -22,15 +22,24 @@ var Work = (function () {
       }).join('');
     }).catch(function () { el.innerHTML = '<p class="small">Reels could not load. <a href="https://instagram.com/leogodesigns">See them on Instagram</a>.</p>'; });
   }
+  function fig(it, cls) { return '<figure class="' + (cls || '') + '"><img src="' + esc(it.image) + '" alt="' + esc(it.caption) + '" loading="lazy"><figcaption>' + esc(it.caption) + '</figcaption></figure>'; }
+  var blocks = {
+    hero: function (b) { return '<div class="b-hero" style="background:' + esc(b.bg) + '"><img src="' + esc(b.image) + '" alt="' + esc(b.alt) + '"></div>'; },
+    brief: function (b) { return '<div class="b-brief"><h2>' + esc(b.title) + '</h2><dl>' + b.items.map(function (r) { return '<div><dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd></div>'; }).join('') + '</dl></div>'; },
+    row: function (b) { return '<div class="b-row"><h2>' + esc(b.title) + '</h2>' + (b.text ? '<p class="lead">' + esc(b.text) + '</p>' : '') + '<div class="grid n' + b.items.length + (b.fit ? ' ' + esc(b.fit) : '') + '">' + b.items.map(function (it) { return fig(it); }).join('') + '</div></div>'; },
+    feature: function (b) { return '<div class="b-feature"><h2>' + esc(b.title) + '</h2><div class="grid">' + fig(b.main, 'main') + '<div class="side">' + b.items.map(function (it) { return fig(it); }).join('') + '</div></div></div>'; },
+    palette: function (b) { return '<div class="b-palette"><h2>' + esc(b.title) + '</h2><div class="sw">' + b.colors.map(function (c) { return '<div><i style="background:' + esc(c[0]) + '"></i><b>' + esc(c[1]) + '</b><span>' + esc(c[0]) + '</span></div>'; }).join('') + '</div></div>'; },
+    video: function (b) { return '<div class="b-video"><h2>' + esc(b.title) + '</h2><video src="' + esc(b.src) + '" poster="' + esc(b.poster) + '" controls playsinline preload="metadata"></video></div>'; }
+  };
   function caseStudy(el, slug) {
     projects().then(function (list) {
-      var p = list.filter(function (x) { return x.slug === slug; })[0];
+      var i = list.findIndex(function (x) { return x.slug === slug; }), p = list[i];
       if (!p) { el.innerHTML = '<h1>Not found</h1><a class="back" href="/work">All work</a>'; return; }
       document.title = p.title + ' | Leogo Designs';
-      var steps = (p.steps || []).map(function (s) { return '<figure><img src="' + esc(s.image) + '" alt="' + esc(s.heading) + '" loading="lazy"><figcaption><b>' + esc(s.heading) + '</b><span>' + esc(s.text) + '</span></figcaption></figure>'; }).join('');
-      el.innerHTML = '<p class="small"><a href="/work">Work</a> / ' + esc(p.client) + '</p><div class="case-top"><div><h1>' + esc(p.title) + '</h1><p class="lead">' + esc(p.summary) + '</p><p class="small" style="margin-top:14px">' + esc(p.type) + ', ' + esc(p.year) + '</p></div>' +
-        (p.reel ? '<video src="' + esc(p.reel) + '" poster="' + esc(p.cover) + '" controls playsinline preload="metadata"></video>' : '<img src="' + esc(p.cover) + '" alt="">') + '</div>' +
-        (steps ? '<div class="steps">' + steps + '</div>' : '') + '<a class="back" href="/work">All work</a>';
+      var next = list.slice(i + 1).concat(list.slice(0, i)).filter(function (x) { return x.slug !== slug; })[0];
+      el.innerHTML = '<p class="small crumb"><a href="/work">Work</a> / ' + esc(p.client) + '</p><h1>' + esc(p.title) + '</h1><p class="lead">' + esc(p.summary) + '</p><p class="meta-line">' + esc(p.type) + ', ' + esc(p.year) + '</p>' +
+        (p.blocks || []).map(function (b) { return blocks[b.type] ? blocks[b.type](b) : ''; }).join('') +
+        (next ? '<a class="next" href="' + esc(caseHref(next)) + '"><span>Next project</span><b>' + esc(next.title) + '</b></a>' : '');
     });
   }
   return { cases: cases, reels: reels, caseStudy: caseStudy };
