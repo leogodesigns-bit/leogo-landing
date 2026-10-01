@@ -3,342 +3,349 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leogo Designs | Brand studio and D2C software, Satara & Pune</title>
+<title>Leogo Designs | Brand studio and D2C software, Pune &amp; Satara</title>
 <meta name="description" content="Leogo Designs builds brands and the software they sell with: Angan storefronts, Setu checkout, Dor stock sync, Hisaab Kitab books and GST, and Vaani for WhatsApp and Instagram sales. Our own jewellery brand, Ikaa, runs on it.">
 <link rel="icon" href="leogo_cropped.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #F6F2EC;
-    --paper-2: #EFE9E0;
-    --ink: #181513;
-    --muted: #5B544D;
-    --line: #DDD4C8;
-    --red: #C8211B;
-    --dark: #1D1916;
-    --dark-line: #3A332D;
-    --serif: "Playfair Display", Georgia, serif;
-    --sans: "IBM Plex Sans", system-ui, sans-serif;
-    --max: 1120px;
+    color-scheme: light;
+    --bg: #E9EBE6;
+    --bg-2: #DFE2DB;
+    --card: #F4F5F1;
+    --ink: #151515;
+    --muted: #4B4C48;
+    --line: #C9CCC4;
+    --red: #D9221A;
+    --on-red: #FFFFFF;
+    --max: 1328px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body { background: var(--bg); color: var(--ink); font: 500 17px/1.55 "Satoshi", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
   a { color: inherit; }
   img, video { display: block; max-width: 100%; height: auto; }
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-  .hero-grid > *, .product > *, .about-grid > *, .halves > *, .steps > * { min-width: 0; }
-  html, body { overflow-x: clip; }
-  .bar .btn { white-space: nowrap; }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; line-height: 1.12; }
-  h1 { font-size: clamp(40px, 7vw, 76px); }
-  h2 { font-size: clamp(30px, 4.6vw, 48px); }
-  h3 { font-size: 24px; }
-  .kicker { font: 600 13px/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 18px; }
-  .lede { font-size: 19px; color: var(--muted); max-width: 640px; }
-  section { padding: 80px 0; border-top: 1px solid var(--line); }
-  .btn { display: inline-block; padding: 14px 22px; border-radius: 3px; font: 600 15px/1 var(--sans); text-decoration: none; border: 1.5px solid var(--ink); }
-  .btn-primary { background: var(--red); border-color: var(--red); color: #fff; }
-  .btn-ghost { background: transparent; }
-  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-  .price { font-weight: 600; white-space: nowrap; }
-  .note { font-size: 14px; color: var(--muted); }
-  .skip { position: absolute; left: -999px; } .skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 20; }
+  @media (min-width: 768px) { .wrap { padding: 0 40px; } }
+  h1, h2, h3 { font-weight: 900; letter-spacing: -0.035em; line-height: 0.98; }
+  h2 { font-size: clamp(40px, 6vw, 76px); }
+  .u { text-decoration: none; box-shadow: inset 0 -0.16em 0 var(--red); }
+  .eyebrow { font: 700 13px/1 "Satoshi", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .lead { font-size: 19px; color: var(--muted); max-width: 58ch; }
+  .btn { display: inline-flex; align-items: center; padding: 15px 20px; font: 700 16px/1 "Satoshi", sans-serif; text-decoration: none; white-space: nowrap; border: 2px solid var(--ink); background: var(--ink); color: var(--bg); }
+  .btn.red { background: var(--red); border-color: var(--red); color: var(--on-red); }
+  .btn.line { background: transparent; color: var(--ink); }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, summary:focus-visible, .btn:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+  .skip { position: absolute; left: -999px; } .skip:focus { left: 12px; top: 12px; background: var(--card); padding: 8px 12px; z-index: 30; }
+  .sr-only { position: absolute; left: -9999px; }
+  section { padding: 96px 0; }
+  .price { font-weight: 700; white-space: nowrap; }
+  .small { font-size: 14px; color: var(--muted); }
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .rise { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+      @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+    }
+  }
 
-  /* header */
-  header { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
-  .bar { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .bar img { height: 30px; width: auto; }
-  nav ul { display: none; list-style: none; gap: 26px; }
-  nav a { text-decoration: none; font-size: 15px; font-weight: 500; }
-  nav a:focus-visible, .btn:focus-visible, summary:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
-  .bar .btn { padding: 10px 14px; font-size: 14px; }
-  @media (min-width: 900px) { nav ul { display: flex; } }
+  /* nav */
+  header { position: sticky; top: 0; z-index: 20; background: var(--bg); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .nav img { height: 32px; width: auto; }
+  .nav ul { display: none; list-style: none; gap: 28px; }
+  .nav ul a { text-decoration: none; font-weight: 500; }
+  .nav .btn { padding: 11px 15px; font-size: 15px; }
+  @media (min-width: 1000px) { .nav ul { display: flex; } }
 
   /* hero */
-  .hero { padding: 64px 0 72px; border-top: 0; }
-  .hero-grid { display: grid; gap: 40px; }
-  .hero h1 em { font-style: italic; color: var(--red); }
-  .hero .lede { margin-top: 22px; }
-  .hero figure video { width: 100%; border: 1px solid var(--line); background: #000; }
-  .hero figcaption { margin-top: 10px; }
-  @media (min-width: 960px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 56px; } }
+  .hero { padding: 40px 0 72px; }
+  .hero-top { display: grid; gap: 28px; }
+  .hero h1 { font-size: clamp(48px, 8.2vw, 112px); padding-bottom: 6px; }
+  .hero .side p { font-size: 19px; max-width: 36ch; }
+  .hero .side .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+  @media (min-width: 1000px) { .hero-top { grid-template-columns: 1fr 340px; align-items: end; gap: 48px; } }
+  .window { display: grid; grid-auto-flow: column; grid-auto-columns: 78%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 44px; padding-bottom: 6px; }
+  .window figure { scroll-snap-align: start; }
+  .window .frame { aspect-ratio: 4 / 3.4; overflow: hidden; background: var(--card); }
+  .window img { width: 100%; height: 100%; object-fit: cover; }
+  .window .fit img { object-fit: contain; background: #E6E9EC; }
+  .window figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
+  @media (min-width: 900px) { .window { grid-auto-flow: initial; grid-template-columns: 1.3fr 1fr 1fr 1.1fr; overflow: visible; } .window .frame { aspect-ratio: auto; height: 300px; } }
 
-  /* two halves */
-  .halves { display: grid; gap: 0; margin-top: 44px; border: 1px solid var(--line); }
-  .half { padding: 30px 26px; }
-  .half + .half { border-top: 1px solid var(--line); }
-  .half h3 { margin-bottom: 8px; }
-  .list { list-style: none; margin-top: 18px; }
-  .list li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 16px; }
-  .list li span:first-child { color: var(--ink); }
-  @media (min-width: 900px) { .halves { grid-template-columns: 1fr 1fr; } .half + .half { border-top: 0; border-left: 1px solid var(--line); } }
+  /* studio / stack split */
+  .split { display: grid; gap: 56px; margin-top: 56px; }
+  @media (min-width: 1000px) { .split { grid-template-columns: 1fr 1fr; gap: 72px; } }
+  .split > * { min-width: 0; }
+  .split h3 { font-size: 34px; letter-spacing: -0.02em; }
+  .split .sub { color: var(--muted); margin-top: 8px; }
+  .rows { list-style: none; margin-top: 26px; }
+  .rows li { display: flex; justify-content: space-between; gap: 20px; padding: 13px 0; }
+  .rows li + li { border-top: 1px solid var(--line); }
+  .proofstrip { display: grid; grid-template-columns: 1.2fr 1fr; gap: 10px; margin-top: 28px; }
+  .proofstrip img { width: 100%; height: 180px; object-fit: cover; background: #fff; }
+  .proofstrip figcaption { grid-column: 1 / -1; font-size: 14px; color: var(--muted); }
 
-  /* stack */
-  .product { display: grid; gap: 22px; padding: 40px 0; border-top: 1px solid var(--line); }
-  .product:first-of-type { border-top: 0; }
-  .product .name { font-family: var(--serif); font-size: 34px; }
-  .product .what { font: 600 13px/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
-  .product p { margin-top: 12px; max-width: 560px; }
-  .product .from { margin-top: 14px; font-size: 16px; }
-  .product figure img { border: 1px solid var(--line); width: 100%; }
-  @media (min-width: 900px) { .product { grid-template-columns: 1fr 1fr; align-items: start; gap: 48px; } }
-  details { margin-top: 18px; border: 1px solid var(--line); background: #fff8f0; }
-  summary { cursor: pointer; list-style: none; padding: 14px 16px; font-weight: 600; font-size: 15px; display: flex; justify-content: space-between; }
+  /* stack scroller */
+  .stack { background: var(--bg-2); }
+  .scroller { display: grid; grid-auto-flow: column; grid-auto-columns: min(86vw, 420px); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 48px; padding: 0 20px 18px; scroll-padding: 20px; align-items: start; }
+  @media (min-width: 768px) { .scroller { padding: 0 40px 18px; scroll-padding: 40px; } }
+  @media (min-width: 1408px) { .scroller { padding-left: calc((100vw - var(--max)) / 2 + 40px); scroll-padding-left: calc((100vw - var(--max)) / 2 + 40px); } }
+  .panel { scroll-snap-align: start; background: var(--card); display: flex; flex-direction: column; min-height: 100%; }
+  .panel .shot { aspect-ratio: 4 / 3; overflow: hidden; background: #E6E9EC; }
+  .panel .shot img { width: 100%; height: 100%; object-fit: cover; }
+  .panel .shot.fit img { object-fit: contain; }
+  .panel .body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+  .panel h3 { font-size: 40px; }
+  .panel .kind { font-weight: 700; color: var(--red); margin-top: 6px; }
+  .panel p { margin-top: 12px; color: var(--muted); font-size: 16px; }
+  .panel .from { margin-top: auto; padding-top: 18px; font-size: 16px; }
+  details { margin-top: 14px; }
+  summary { cursor: pointer; list-style: none; font-weight: 700; display: inline-flex; gap: 8px; padding: 10px 0; border-bottom: 2px solid var(--ink); }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; font-weight: 500; }
+  summary::after { content: "+"; }
   details[open] summary::after { content: "\2212"; }
-  .tbl-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 15px; }
-  th, td { text-align: left; padding: 10px 16px; border-top: 1px solid var(--line); vertical-align: top; }
-  th { font-weight: 600; font-size: 13px; letter-spacing: 0.04em; color: var(--muted); }
-  td.num, th.num { text-align: right; white-space: nowrap; }
-  .terms { padding: 12px 16px 16px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
-  .terms p + p { margin-top: 6px; }
+  .plans { margin-top: 14px; font-size: 15px; }
+  .plans .plan { padding: 12px 0; }
+  .plans .plan + .plan { border-top: 1px solid var(--line); }
+  .plans .top { display: flex; justify-content: space-between; gap: 12px; font-weight: 700; }
+  .plans .inc { color: var(--muted); margin-top: 4px; }
+  .plans .terms { color: var(--muted); margin-top: 10px; font-size: 14px; }
+  .hint { margin-top: 12px; }
 
-  /* proof (dark) */
-  .proof { background: var(--dark); color: #F3EEE7; border-top: 0; }
-  .proof .lede, .proof .note { color: #BFB5A9; }
-  .steps { display: grid; gap: 28px; margin-top: 44px; }
-  .step img { border: 1px solid var(--dark-line); width: 100%; }
-  .step h3 { margin-top: 14px; font-size: 21px; }
-  .step p { margin-top: 6px; color: #CFC6BB; font-size: 15px; }
-  @media (min-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
-  .figures { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 48px; border-top: 1px solid var(--dark-line); }
-  .figures div { padding: 22px 0 6px; }
-  .figures b { display: block; font: 500 34px/1.1 var(--serif); }
-  .figures span { font-size: 14px; color: #BFB5A9; }
-  @media (min-width: 900px) { .figures { grid-template-columns: repeat(4, 1fr); } }
+  /* ikaa proof */
+  .proof-grid { display: grid; gap: 40px; margin-top: 48px; }
+  .proof-grid > * { min-width: 0; }
+  @media (min-width: 1000px) { .proof-grid { grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; } }
+  .proof video { width: 100%; background: #000; }
+  .timeline { list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 74px 1fr; gap: 18px; padding: 0 0 30px; }
+  .timeline li > div { min-width: 0; }
+  .timeline time { font-weight: 900; font-size: 20px; }
+  .timeline b { display: block; font-size: 22px; letter-spacing: -0.01em; }
+  .timeline span { color: var(--muted); font-size: 16px; }
+  .timeline img { margin-top: 12px; width: 100%; max-width: 460px; }
+  .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 16px; margin-top: 64px; }
+  .facts b { display: block; font-size: clamp(36px, 5vw, 56px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; }
+  .facts span { color: var(--muted); font-size: 15px; }
+  @media (min-width: 900px) { .facts { grid-template-columns: repeat(4, 1fr); } }
 
-  /* pricing compare */
-  .compare { margin-top: 36px; border: 1px solid var(--line); background: #fff8f0; }
-  .bundles { margin-top: 28px; border: 1px solid var(--line); }
+  /* pricing */
+  .big { font-size: clamp(64px, 12vw, 168px); font-weight: 900; letter-spacing: -0.05em; line-height: 0.9; color: var(--red); }
+  .bigline { font-size: clamp(22px, 2.6vw, 32px); font-weight: 700; letter-spacing: -0.01em; max-width: 30ch; margin-top: 14px; }
+  .price-grid { display: grid; gap: 48px; margin-top: 64px; }
+  .price-grid > * { min-width: 0; overflow-x: auto; }
+  @media (min-width: 1000px) { .price-grid { grid-template-columns: 1fr 1fr; gap: 64px; } }
+  .price-grid h3 { font-size: 30px; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .tbl { width: 100%; border-collapse: collapse; font-size: 16px; }
+  .tbl th { text-align: left; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 700; padding: 0 0 10px; }
+  .tbl td { padding: 14px 0; border-top: 1px solid var(--line); vertical-align: top; }
+  .tbl td + td, .tbl th + th { padding-left: 14px; }
+  .tbl .r { text-align: right; white-space: nowrap; }
+  .tbl .was { display: block; color: var(--muted); font-size: 13px; font-weight: 500; }
+  .tbl .save { color: var(--red); font-weight: 700; }
 
-  /* clients */
-  .clients-list { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 36px; border-top: 1px solid var(--line); }
-  .clients-list li { list-style: none; padding: 18px 0; border-bottom: 1px solid var(--line); }
-  .clients-list b { display: block; font-weight: 600; }
-  .clients-list span { font-size: 14px; color: var(--muted); }
-  @media (min-width: 900px) { .clients-list { grid-template-columns: repeat(4, 1fr); } }
+  /* clients marquee */
+  .clients { padding: 72px 0; overflow: hidden; }
+  .track { display: flex; gap: 56px; width: max-content; font-size: clamp(30px, 4.4vw, 56px); font-weight: 900; letter-spacing: -0.03em; white-space: nowrap; }
+  .track span:nth-child(even) { color: var(--red); }
+  @media (prefers-reduced-motion: no-preference) { .track { animation: slide 48s linear infinite; } @keyframes slide { to { transform: translateX(-50%); } } }
+  .clients .note { margin-top: 26px; }
 
   /* about */
-  .about-grid { display: grid; gap: 28px; }
-  @media (min-width: 900px) { .about-grid { grid-template-columns: 1fr 1fr; gap: 56px; } }
+  .about h2 { max-width: 15ch; }
+  .about-cols { display: grid; gap: 22px; margin-top: 40px; color: var(--muted); font-size: 18px; }
+  @media (min-width: 1000px) { .about-cols { grid-template-columns: 1fr 1fr; gap: 56px; } }
 
-  /* contact + footer */
-  .contact { background: var(--paper-2); }
-  footer { padding: 36px 0 48px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
-  footer .row { display: flex; flex-wrap: wrap; gap: 18px 28px; justify-content: space-between; }
+  /* contact */
+  .contact { background: var(--red); color: var(--on-red); }
+  .contact h2 { max-width: 14ch; }
+  .contact .btn { background: var(--on-red); color: #151515; border-color: var(--on-red); margin-top: 32px; }
+  .contact .btn.line { background: transparent; color: var(--on-red); }
+  .contact .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  footer { padding: 36px 0 48px; font-size: 14px; color: var(--muted); }
+  footer .row { display: flex; flex-wrap: wrap; gap: 18px 28px; justify-content: space-between; align-items: center; }
+  footer ul { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; }
   footer a { text-decoration: none; }
-  footer ul { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; }
+  .footer-logo { height: 26px; width: auto; }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header>
-  <div class="wrap bar">
-    <a href="#top" aria-label="Leogo Designs home"><img src="leogo_final_logo_11-01.png" alt="Leogo Designs" width="120" height="30"></a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="#studio">Studio</a></li>
-        <li><a href="#stack">The stack</a></li>
-        <li><a href="#ikaa">Ikaa</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="work/index.html">Work</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-primary" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
+  <div class="wrap nav">
+    <a href="#top" aria-label="Leogo Designs home"><img src="leogo_final_logo_11-01.png" alt="Leogo Designs" width="128" height="32"></a>
+    <ul>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#ikaa">Ikaa</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="work/index.html">Work</a></li>
+    </ul>
+    <a class="btn red" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
   </div>
 </header>
 
 <main id="main">
   <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div>
-        <p class="kicker">Leogo Designs · Satara &amp; Pune</p>
-        <h1>Brands, and the <em>systems</em> that sell them.</h1>
-        <p class="lede">We are a design studio that builds brands, runs their Instagram, and makes the software they sell with. Our own jewellery brand, Ikaa, left Shopify and runs on it today.</p>
-        <div class="btns">
-          <a class="btn btn-primary" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
-          <a class="btn btn-ghost" href="#stack">See the stack</a>
+    <div class="wrap">
+      <div class="hero-top">
+        <h1>Brands, and the <span class="u">software</span> that sells them.</h1>
+        <div class="side">
+          <p>A Pune studio that designs brands, runs their Instagram, and builds the store, checkout and books they sell with.</p>
+          <div class="btns"><a class="btn" href="#stack">See the stack</a></div>
         </div>
       </div>
-      <figure>
-        <video src="assets/stack/ikaa-order.mp4" poster="assets/stack/ikaa-order-poster.jpg" controls muted playsinline preload="metadata" width="1080" height="1350"></video>
-        <figcaption class="note">A real Ikaa order, 26 Sept 2026: website, checkout, stock and books in two minutes. Customer details hidden.</figcaption>
-      </figure>
+      <div class="window">
+        <figure><div class="frame"><img src="assets/stack/angan-ikaa-store.jpg" alt="Ikaa Jewellery's live store on Angan" width="1377" height="868"></div><figcaption>Ikaa's store on Angan</figcaption></figure>
+        <figure><div class="frame"><img src="assets/work/visiting-card.jpg" alt="Rajathee Sarees visiting card designed by Leogo" width="1400" height="900"></div><figcaption>Rajathee Sarees identity</figcaption></figure>
+        <figure><div class="frame"><img src="assets/work/sneakculture-look.jpg" alt="SneakCulture campaign image" width="1400" height="788"></div><figcaption>SneakCulture campaign</figcaption></figure>
+        <figure><div class="frame fit"><img src="assets/stack/crop-setu.jpg" alt="Setu checkout record of a real Ikaa order, paid ₹1,330" width="500" height="350"></div><figcaption>Setu checkout, a real order</figcaption></figure>
+      </div>
     </div>
   </section>
 
   <section id="studio">
     <div class="wrap">
-      <p class="kicker">Two halves of Leogo</p>
-      <h2>A studio for your brand. Software for your sales.</h2>
-      <p class="lede" style="margin-top:16px">Take one half or both. Most founders start with the brand and grow into the stack.</p>
-      <div class="halves">
-        <div class="half">
-          <h3>Studio</h3>
-          <p class="note">Six years, 30+ brands.</p>
-          <ul class="list">
+      <h2 class="rise">One studio. Two things we make.</h2>
+      <div class="split">
+        <div class="rise">
+          <h3>The brand</h3>
+          <p class="sub">Six years, 30+ brands, remote across India.</p>
+          <ul class="rows">
             <li><span>Logo and branding</span><span class="price">from ₹4,000</span></li>
             <li><span>Brand kit</span><span class="price">₹2,000</span></li>
             <li><span>Brand book</span><span class="price">₹8,000</span></li>
-            <li><span>Social media management (Satara &amp; Pune)</span><span class="price">from ₹12,000/mo</span></li>
+            <li><span>Social media, Pune &amp; Satara</span><span class="price">from ₹12,000/mo</span></li>
             <li><span>Store design and build on Angan</span><span class="price">from ₹18,000</span></li>
           </ul>
+          <figure class="proofstrip">
+            <img src="assets/work/logo-final.png" alt="Rajathee Sarees logo" loading="lazy" width="1400" height="1000">
+            <img src="assets/work/billbook.jpg" alt="Rajathee bill book" loading="lazy" width="1400" height="1000">
+            <figcaption>Rajathee Sarees: logo, stationery and bill book.</figcaption>
+          </figure>
         </div>
-        <div class="half">
-          <h3>The stack</h3>
-          <p class="note">Five tools, built for Indian D2C. Use one, or all five.</p>
-          <ul class="list">
-            <li><span>Angan · storefront</span><span class="price">from ₹1,500/mo</span></li>
-            <li><span>Setu · checkout &amp; payments</span><span class="price">from ₹2,999/mo</span></li>
-            <li><span>Dor · stock sync</span><span class="price">from ₹599/mo</span></li>
-            <li><span>Hisaab Kitab · books &amp; GST</span><span class="price">₹799/mo</span></li>
-            <li><span>Vaani · WhatsApp &amp; Instagram sales</span><span class="price">from ₹1,999/mo</span></li>
+        <div class="rise">
+          <h3>The software</h3>
+          <p class="sub">Five tools built for Indian D2C. Use one, or all five.</p>
+          <ul class="rows">
+            <li><span>Angan, your storefront</span><span class="price">from ₹1,500/mo</span></li>
+            <li><span>Setu, checkout &amp; payments</span><span class="price">from ₹2,999/mo</span></li>
+            <li><span>Dor, stock sync</span><span class="price">₹599/mo</span></li>
+            <li><span>Hisaab Kitab, books &amp; GST</span><span class="price">₹799/mo</span></li>
+            <li><span>Vaani, WhatsApp &amp; Instagram sales</span><span class="price">from ₹1,999/mo</span></li>
           </ul>
+          <p class="small" style="margin-top:22px">All prices exclude 18% GST.</p>
         </div>
       </div>
-      <p class="note" style="margin-top:14px">All prices exclude 18% GST.</p>
     </div>
   </section>
 
-  <section id="stack">
+  <section class="stack" id="stack">
     <div class="wrap">
-      <p class="kicker">The stack</p>
-      <h2>Everything a small brand sells with, in one place.</h2>
-      <p class="lede" style="margin-top:16px">Each tool works on its own. Together, a sale on your website, on WhatsApp or on Instagram lands in the same stock count and the same books.</p>
-
-      <article class="product" id="angan">
-        <div>
-          <div class="name">Angan</div>
-          <div class="what">Storefront platform</div>
-          <p>Your own online store, designed by our studio, with live stock and prices. The platform Ikaa moved to from Shopify. Every Angan store takes payments through Setu.</p>
-          <p class="from">Store build <span class="price">from ₹18,000</span>, then <span class="price">₹1,500/mo</span> plus a small share of sales.</p>
-          <details>
-            <summary>See all Angan plans</summary>
-            <div class="tbl-wrap"><table>
-              <tr><th>Store build (one time)</th><th class="num">Price</th><th>What we build</th></tr>
-              <tr><td>Starter</td><td class="num">₹18,000</td><td>Up to 50 products, Angan theme in your brand colours, 1 round of revisions</td></tr>
-              <tr><td>Growth (most brands)</td><td class="num">₹25,000</td><td>Up to 200 products, custom homepage sections and brand moods, move from Shopify, Meta pixel and Conversions API, SEO setup, 2 rounds of revisions</td></tr>
-              <tr><td>Signature</td><td class="num">₹48,000</td><td>Unlimited products, fully custom design, full move with old links redirected, analytics, 3 rounds of revisions, priority support</td></tr>
-            </table></div>
-            <div class="tbl-wrap"><table>
-              <tr><th>Running the store (every plan)</th><th class="num">Monthly</th></tr>
-              <tr><td>Hosting and support</td><td class="num">₹1,500</td></tr>
-              <tr><td>On the first ₹3 lakh of orders each month</td><td class="num">1.5%</td></tr>
-              <tr><td>On orders between ₹3 lakh and ₹10 lakh</td><td class="num">1%</td></tr>
-              <tr><td>On orders above ₹10 lakh</td><td class="num">0.5%</td></tr>
-            </table></div>
-            <div class="terms">
-              <p><b>Live in 21 days, or your build fee back.</b> The 21 days start once the contract is signed and we have your product list, photos, logo, policies and domain access. Delays in sharing these pause the clock.</p>
-              <p>The share is on the total value of orders placed through your store each month, as recorded at checkout. Fair use applies to very high traffic.</p>
+      <p class="eyebrow">The stack</p>
+      <h2 class="rise">Everything a small brand sells with.</h2>
+      <p class="lead" style="margin-top:20px">A sale on your website, WhatsApp or Instagram lands in one stock count and one set of books.</p>
+    </div>
+    <div class="scroller" aria-label="The five tools">
+      <article class="panel" id="angan">
+        <div class="shot"><img src="assets/stack/angan-ikaa-store.jpg" alt="Ikaa's store running on Angan" loading="lazy" width="1377" height="868"></div>
+        <div class="body">
+          <h3>Angan</h3><div class="kind">Storefront platform</div>
+          <p>Your own store, designed by our studio, with live stock and prices. What Ikaa moved to from Shopify.</p>
+          <div class="from">Build <span class="price">from ₹18,000</span>, then <span class="price">₹1,500/mo</span> + a small share of sales.</div>
+          <details><summary>All plans</summary>
+            <div class="plans">
+              <div class="plan"><div class="top"><span>Starter</span><span>₹18,000</span></div><div class="inc">Up to 50 products, Angan theme in your colours, 1 revision round</div></div>
+              <div class="plan"><div class="top"><span>Growth</span><span>₹25,000</span></div><div class="inc">Up to 200 products, custom homepage and brand moods, move from Shopify, Meta pixel and Conversions API, SEO, 2 revision rounds</div></div>
+              <div class="plan"><div class="top"><span>Signature</span><span>₹48,000</span></div><div class="inc">Unlimited products, fully custom design, full move with old links redirected, analytics, 3 revision rounds, priority support</div></div>
+              <div class="plan"><div class="top"><span>Every plan, monthly</span><span>₹1,500</span></div><div class="inc">Plus 1.5% of orders up to ₹3 lakh a month, 1% from ₹3 to 10 lakh, 0.5% above ₹10 lakh</div></div>
+              <p class="terms">Live in 21 days or your build fee back, counted from contract signing and receipt of your products, photos, logo, policies and domain access. Every Angan store takes payments through Setu.</p>
             </div>
           </details>
         </div>
-        <figure><img src="assets/stack/angan-ikaa-store.jpg" alt="Ikaa Jewellery's live Angan store, showing the Lamplight mood and a product page" width="1377" height="868" loading="lazy"></figure>
       </article>
-
-      <article class="product" id="setu">
-        <div>
-          <div class="name">Setu</div>
-          <div class="what">Checkout &amp; payments</div>
-          <p>A checkout built for India: WhatsApp OTP, pincode autofill, coupons, UPI, cards and partial COD through PayU. It reminds shoppers who leave their cart and alerts you on every order.</p>
-          <p class="from"><span class="price">from ₹2,999/mo</span> plus a one-time setup.</p>
-          <details>
-            <summary>See all Setu plans</summary>
-            <div class="tbl-wrap"><table>
-              <tr><th>Plan</th><th class="num">Monthly</th><th class="num">Setup</th><th>Includes</th></tr>
-              <tr><td>Starter</td><td class="num">₹2,999</td><td class="num">₹3,000</td><td>Smart checkout, UPI, cards and partial COD, cart reminders, order alerts, dashboard. Up to 10,000 sessions</td></tr>
-              <tr><td>Growth (most brands)</td><td class="num">₹5,999</td><td class="num">₹5,000</td><td>Starter, plus COD risk checks, buying-intent scoring, upsells, AI copilot, Meta, GA4 and Clarity. Up to 50,000 sessions</td></tr>
-              <tr><td>Scale</td><td class="num">₹14,999</td><td class="num">₹7,000</td><td>Growth, plus Shiprocket, per-product rules and an account manager. 5 lakh+ sessions</td></tr>
-            </table></div>
-            <div class="terms"><p>Setup connects your own WhatsApp Business number. Meta bills you directly for OTPs and order messages.</p></div>
-          </details>
-        </div>
-        <figure><img src="assets/stack/crop-setu.jpg" alt="Setu checkout record for a real Ikaa order: paid ₹1,330 via PayU at 12:47 PM" width="500" height="350" loading="lazy"></figure>
-      </article>
-
-      <article class="product" id="dor">
-        <div>
-          <div class="name">Dor</div>
-          <div class="what">Stock sync</div>
-          <p>One stock count for your website, WhatsApp and Instagram. Sell a piece anywhere and it is updated everywhere, so the last piece never sells twice. Manage stock and prices from a Google Sheet if you like.</p>
-          <p class="from"><span class="price">₹599/mo</span> plus ₹1,500 setup.</p>
-          <details>
-            <summary>See Dor pricing</summary>
-            <div class="tbl-wrap"><table>
-              <tr><th></th><th class="num">Setup</th><th class="num">Monthly</th></tr>
-              <tr><td>Dor</td><td class="num">₹1,500</td><td class="num">₹599</td></tr>
-              <tr><td>With Vaani, for brands without a website</td><td class="num">₹1,500</td><td class="num">₹0</td></tr>
-            </table></div>
-          </details>
-        </div>
-        <figure><img src="assets/stack/crop-dor.jpg" alt="Dor updating stock on the website, WhatsApp and Instagram after a sale" width="1000" height="250" loading="lazy"></figure>
-      </article>
-
-      <article class="product" id="hisaab-kitab">
-        <div>
-          <div class="name">Hisaab Kitab</div>
-          <div class="what">Books &amp; GST</div>
-          <p>Every sale becomes a GST invoice and lands in your books on its own, next to your expenses. Each month you get your GST return file, ready to upload. We set it up for you, so your CA only checks and files.</p>
-          <p class="from"><span class="price">₹799/mo</span> plus ₹3,000 setup.</p>
-          <details>
-            <summary>What Hisaab Kitab covers</summary>
-            <div class="tbl-wrap"><table>
-              <tr><th>Included</th></tr>
-              <tr><td>GST invoices with correct numbering, for every order</td></tr>
-              <tr><td>GSTR-1 and GSTR-3B files ready to upload, with input tax credit and reverse charge handled</td></tr>
-              <tr><td>Income, expenses and profit by month</td></tr>
-              <tr><td>Stock and orders, with payment gateway fees matched to each sale</td></tr>
-            </table></div>
-            <div class="terms"><p>Setup ₹3,000 covers your GST details, invoice numbering, opening stock and payment gateway connection.</p></div>
-          </details>
-        </div>
-        <figure><img src="assets/stack/crop-hk.jpg" alt="Hisaab Kitab entry for a real Ikaa order: income booked, GST invoice created, GST return file updated" width="500" height="350" loading="lazy"></figure>
-      </article>
-
-      <article class="product" id="vaani">
-        <div>
-          <div class="name">Vaani</div>
-          <div class="what">WhatsApp &amp; Instagram sales</div>
-          <p>Answers DMs and comments on Instagram and chats on WhatsApp, day and night. Shows what is in stock and takes the order. Since June 2026 it has answered 10,445 Instagram DMs and replied to 4,535 comments for 8 brands.</p>
-          <p class="from"><span class="price">from ₹1,999/mo</span> plus setup.</p>
-          <details>
-            <summary>See Vaani plans</summary>
-            <div class="tbl-wrap"><table>
-              <tr><th>Plan</th><th class="num">Monthly</th><th class="num">Setup</th></tr>
-              <tr><td>Instagram</td><td class="num">₹1,999</td><td class="num">₹4,000</td></tr>
-              <tr><td>WhatsApp</td><td class="num">₹2,999</td><td class="num">₹4,000</td></tr>
-              <tr><td>WhatsApp and Instagram</td><td class="num">₹3,499</td><td class="num">₹6,500</td></tr>
-            </table></div>
-            <div class="terms">
-              <p>Founding rates for our first 15 brands, with 1,000 conversations a month. Meta's own message charges are paid by your brand. No website? We connect your catalogue through Dor for ₹1,500, with no monthly fee.</p>
-              <p>Full plans, postpaid and add-ons on <a href="https://www.vaani.website/pricing.html">vaani.website</a>.</p>
+      <article class="panel" id="setu">
+        <div class="shot fit"><img src="assets/stack/crop-setu.jpg" alt="Setu checkout record: paid ₹1,330 via PayU" loading="lazy" width="500" height="350"></div>
+        <div class="body">
+          <h3>Setu</h3><div class="kind">Checkout &amp; payments</div>
+          <p>WhatsApp OTP, pincode autofill, coupons, UPI, cards and partial COD through PayU. Cart reminders and order alerts.</p>
+          <div class="from"><span class="price">from ₹2,999/mo</span> + setup.</div>
+          <details><summary>All plans</summary>
+            <div class="plans">
+              <div class="plan"><div class="top"><span>Starter</span><span>₹2,999/mo</span></div><div class="inc">Smart checkout, partial COD, cart reminders, order alerts, dashboard. 10,000 sessions. Setup ₹3,000</div></div>
+              <div class="plan"><div class="top"><span>Growth</span><span>₹5,999/mo</span></div><div class="inc">Starter, plus COD risk checks, intent scoring, upsells, AI copilot, Meta, GA4 and Clarity. 50,000 sessions. Setup ₹5,000</div></div>
+              <div class="plan"><div class="top"><span>Scale</span><span>₹14,999/mo</span></div><div class="inc">Growth, plus Shiprocket, per-product rules and an account manager. 5 lakh+ sessions. Setup ₹7,000</div></div>
+              <p class="terms">Setup connects your own WhatsApp Business number. Meta bills you directly for OTPs and order messages.</p>
             </div>
           </details>
         </div>
-        <figure><img src="assets/stack/order-20.5.jpg" alt="The five Leogo tools connected around Ikaa: Angan, Setu, Vaani, Dor and Hisaab Kitab" width="1080" height="1350" loading="lazy"></figure>
+      </article>
+      <article class="panel" id="dor">
+        <div class="shot fit"><img src="assets/stack/crop-dor.jpg" alt="Dor updating stock on website, WhatsApp and Instagram" loading="lazy" width="1000" height="250"></div>
+        <div class="body">
+          <h3>Dor</h3><div class="kind">Stock sync</div>
+          <p>One stock count for your website, WhatsApp and Instagram. The last piece never sells twice. Edit stock from a Google Sheet if you like.</p>
+          <div class="from"><span class="price">₹599/mo</span> + ₹1,500 setup.</div>
+          <details><summary>Pricing</summary>
+            <div class="plans">
+              <div class="plan"><div class="top"><span>Dor</span><span>₹599/mo</span></div><div class="inc">Setup ₹1,500</div></div>
+              <div class="plan"><div class="top"><span>With Vaani, no website</span><span>₹0/mo</span></div><div class="inc">Setup ₹1,500</div></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      <article class="panel" id="hisaab-kitab">
+        <div class="shot fit"><img src="assets/stack/crop-hk.jpg" alt="Hisaab Kitab entry: income booked, GST invoice created" loading="lazy" width="500" height="350"></div>
+        <div class="body">
+          <h3>Hisaab Kitab</h3><div class="kind">Books &amp; GST</div>
+          <p>Every sale becomes a GST invoice in your books, next to your expenses. Your GST return file, ready to upload each month.</p>
+          <div class="from"><span class="price">₹799/mo</span> + ₹3,000 setup.</div>
+          <details><summary>What it covers</summary>
+            <div class="plans">
+              <div class="plan"><div class="inc">GST invoices with correct numbering, GSTR-1 and GSTR-3B files with input tax credit and reverse charge, income, expenses and profit by month, stock, and payment gateway fees matched to each sale.</div></div>
+              <p class="terms">We set it up for you, so your CA only checks and files.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+      <article class="panel" id="vaani">
+        <div class="shot"><img src="assets/work/sneakculture-look.jpg" alt="SneakCulture, which sells on Instagram with Vaani" loading="lazy" width="1400" height="788"></div>
+        <div class="body">
+          <h3>Vaani</h3><div class="kind">WhatsApp &amp; Instagram sales</div>
+          <p>Replies to DMs, comments and WhatsApp day and night, shows what is in stock and takes the order. SneakCulture sells with it.</p>
+          <div class="from"><span class="price">from ₹1,999/mo</span> + setup.</div>
+          <details><summary>All plans</summary>
+            <div class="plans">
+              <div class="plan"><div class="top"><span>Instagram</span><span>₹1,999/mo</span></div><div class="inc">Setup ₹4,000</div></div>
+              <div class="plan"><div class="top"><span>WhatsApp</span><span>₹2,999/mo</span></div><div class="inc">Setup ₹4,000</div></div>
+              <div class="plan"><div class="top"><span>WhatsApp + Instagram</span><span>₹3,499/mo</span></div><div class="inc">Setup ₹6,500</div></div>
+              <p class="terms">Founding rates for our first 15 brands, 1,000 conversations a month. Meta's message charges are paid by your brand. Full plans on <a href="https://www.vaani.website/pricing.html">vaani.website</a>.</p>
+            </div>
+          </details>
+        </div>
       </article>
     </div>
+    <div class="wrap"><p class="small hint">Swipe to see all five.</p></div>
   </section>
 
   <section class="proof" id="ikaa">
     <div class="wrap">
-      <p class="kicker">Proof</p>
-      <h2>We moved Ikaa off Shopify.</h2>
-      <p class="lede" style="margin-top:16px">Ikaa is our own jewellery brand. On 26 Sept 2026 its first order on the new stack came in: two pairs of earrings, gift wrapped, ₹1,330. Here is what happened in the next two minutes.</p>
-      <div class="steps">
-        <div class="step"><img src="assets/stack/crop-cart.jpg" alt="Ikaa cart with two earrings and gift wrap, total ₹1,330" width="1000" height="470" loading="lazy"><h3>12:45 · Angan</h3><p>The shopper fills the bag on ikaajewellery.com and taps pay.</p></div>
-        <div class="step"><img src="assets/stack/crop-setu.jpg" alt="Setu showing payment received via PayU" width="500" height="350" loading="lazy"><h3>12:47 · Setu</h3><p>Payment through PayU. Setu passes the order to Dor and the books.</p></div>
-        <div class="step"><img src="assets/stack/crop-hk.jpg" alt="Hisaab Kitab booking income and creating the GST invoice" width="500" height="350" loading="lazy"><h3>12:47 · Hisaab Kitab</h3><p>Income booked, GST invoice created, the month's GST return file updated.</p></div>
-        <div class="step"><img src="assets/stack/crop-dor.jpg" alt="Dor updating stock on every channel" width="1000" height="250" loading="lazy"><h3>12:47 · Dor</h3><p>Two pieces out of stock on the website, WhatsApp and Instagram at once.</p></div>
+      <h2 class="rise">We moved Ikaa off Shopify.</h2>
+      <p class="lead" style="margin-top:20px">Ikaa is our own jewellery brand. Its first order on the new stack, 26 Sept 2026, took two minutes from cart to books.</p>
+      <div class="proof-grid">
+        <video src="assets/stack/ikaa-order.mp4" poster="assets/stack/ikaa-order-poster.jpg" controls muted playsinline preload="metadata" width="1080" height="1350" aria-label="Video of the Ikaa order moving through all five tools"></video>
+        <ol class="timeline">
+          <li><time>12:45</time><div><b>Angan</b><span>Two pairs of earrings and gift wrap, ₹1,330, on ikaajewellery.com.</span><img src="assets/stack/crop-cart.jpg" alt="Ikaa cart with two earrings and gift wrap" loading="lazy" width="1000" height="470"></div></li>
+          <li><time>12:47</time><div><b>Setu</b><span>Paid through PayU. Order sent on to Dor and the books.</span></div></li>
+          <li><time>12:47</time><div><b>Hisaab Kitab</b><span>Income booked, GST invoice made, the month's GST file updated.</span></div></li>
+          <li><time>12:47</time><div><b>Dor</b><span>Both pieces marked sold on the website, WhatsApp and Instagram.</span></div></li>
+        </ol>
       </div>
-      <div class="figures">
+      <div class="facts">
         <div><b>8</b><span>brands on Vaani since June 2026</span></div>
         <div><b>141+</b><span>orders taken in chat</span></div>
         <div><b>10,445</b><span>Instagram DMs answered</span></div>
@@ -347,63 +354,52 @@
     </div>
   </section>
 
-  <section id="pricing">
+  <section id="pricing" style="background:var(--bg-2)">
     <div class="wrap">
-      <p class="kicker">Pricing</p>
-      <h2>Bundles, and how they compare.</h2>
-      <p class="lede" style="margin-top:16px">Each tool is sold on its own, with every plan listed above. Bundles save 15 to 22% on the monthly fee and the setup.</p>
-      <div class="bundles tbl-wrap">
-        <table>
-          <tr><th>Bundle</th><th>Includes</th><th class="num">Monthly</th><th class="num">Setup</th></tr>
-          <tr><td>Run the shop</td><td>Setu, Dor, Hisaab Kitab</td><td class="num">₹3,599 <span class="note">(₹4,397 separately)</span></td><td class="num">₹6,000</td></tr>
-          <tr><td>Sell and get paid</td><td>Vaani (WhatsApp and Instagram), Setu</td><td class="num">₹5,499 <span class="note">(₹6,498)</span></td><td class="num">₹8,000</td></tr>
-          <tr><td>Full stack</td><td>Angan, Setu, Dor, Hisaab Kitab, Vaani</td><td class="num">₹7,499 + Angan share <span class="note">(₹9,396)</span></td><td class="num">₹25,000</td></tr>
-        </table>
+      <p class="eyebrow">Pricing</p>
+      <div class="big">40%</div>
+      <p class="bigline">less each month than Shopify and the apps a small brand needs, for the full stack.</p>
+      <div class="price-grid">
+        <div>
+          <h3>Bundles</h3>
+          <table class="tbl">
+            <tr><th>Bundle</th><th class="r">Monthly</th><th class="r">Setup</th></tr>
+            <tr><td><b>Run the shop</b><span class="was">Setu, Dor, Hisaab Kitab</span></td><td class="r">₹3,599<span class="was">₹4,397 separately</span></td><td class="r">₹6,000</td></tr>
+            <tr><td><b>Sell and get paid</b><span class="was">Vaani (WhatsApp + Instagram), Setu</span></td><td class="r">₹5,499<span class="was">₹6,498 separately</span></td><td class="r">₹8,000</td></tr>
+            <tr><td><b>Full stack</b><span class="was">All five tools</span></td><td class="r">₹7,499<span class="was">+ Angan's share of sales</span></td><td class="r">₹25,000</td></tr>
+          </table>
+          <p class="small" style="margin-top:14px">Starter plans included. Higher plans add the difference. Pay yearly, get 2 months free. Prices exclude 18% GST.</p>
+        </div>
+        <div>
+          <h3>Full stack vs Shopify + apps</h3>
+          <table class="tbl">
+            <tr><th>Orders a month</th><th class="r">Shopify + apps</th><th class="r">Leogo</th><th class="r">Saving</th></tr>
+            <tr><td>₹1 lakh</td><td class="r">₹14,794</td><td class="r">₹8,999</td><td class="r save">39%</td></tr>
+            <tr><td>₹3 lakh</td><td class="r">₹20,043</td><td class="r">₹11,999</td><td class="r save">40%</td></tr>
+            <tr><td>₹5 lakh</td><td class="r">₹24,543</td><td class="r">₹13,999</td><td class="r save">43%</td></tr>
+            <tr><td>₹10 lakh</td><td class="r">₹35,793</td><td class="r">₹18,999</td><td class="r save">47%</td></tr>
+          </table>
+          <p class="small" style="margin-top:14px">Half of orders assumed COD. Shopify + apps: Shopify Basic with its 2% fee on online payments, a one-click checkout (₹3,000 + about 2.5% of prepaid orders), a WhatsApp and Instagram bot with AI (₹6,700), stock sync (about ₹850) and accounting. Published prices, 1 Oct 2026. Payment gateway fees apply to both.</p>
+        </div>
       </div>
-      <p class="note" style="margin-top:10px">Bundles use Starter plans. Higher plans are the bundle price plus the difference. Pay yearly and get 2 months free. All prices exclude 18% GST.</p>
-
-      <h3 style="margin-top:56px">Full stack vs Shopify and its apps</h3>
-      <p class="note" style="margin-top:6px">What a brand pays each month, assuming half its orders are COD.</p>
-      <div class="compare tbl-wrap">
-        <table>
-          <tr><th>Online orders a month</th><th class="num">Shopify + apps</th><th class="num">Leogo full stack</th><th class="num">You save</th></tr>
-          <tr><td>₹1 lakh</td><td class="num">₹14,794</td><td class="num">₹8,999</td><td class="num">39%</td></tr>
-          <tr><td>₹3 lakh</td><td class="num">₹20,043</td><td class="num">₹11,999</td><td class="num">40%</td></tr>
-          <tr><td>₹5 lakh</td><td class="num">₹24,543</td><td class="num">₹13,999</td><td class="num">43%</td></tr>
-          <tr><td>₹10 lakh</td><td class="num">₹35,793</td><td class="num">₹18,999</td><td class="num">47%</td></tr>
-        </table>
-      </div>
-      <p class="note" style="margin-top:10px">Shopify + apps: Shopify Basic ₹1,994 with its 2% fee on online payments, a one-click checkout at ₹3,000 plus about 2.5% of prepaid orders, a WhatsApp and Instagram bot with AI at ₹6,700, a stock sync app at about ₹850 and accounting software. Based on each company's published prices, 1 Oct 2026. Payment gateway fees apply to both and are left out.</p>
     </div>
   </section>
 
-  <section id="clients">
-    <div class="wrap">
-      <p class="kicker">Clients</p>
-      <h2>Founders we work with.</h2>
-      <ul class="clients-list">
-        <li><b>Rajathee Sarees</b><span>Sarees · retail</span></li>
-        <li><b>Bhagare Misal</b><span>Food · heritage brand</span></li>
-        <li><b>The Woof Parade</b><span>Dog apparel</span></li>
-        <li><b>Dynam EV</b><span>Electric vehicles</span></li>
-        <li><b>Maan Textiles</b><span>Textiles · Vaani</span></li>
-        <li><b>SneakCulture</b><span>Sneakers · Vaani</span></li>
-        <li><b>Yogita MUA</b><span>Beauty · personal brand</span></li>
-        <li><b>Home Linen Studio</b><span>0 to 150k Instagram followers in 18 months</span></li>
-      </ul>
-      <div class="btns"><a class="btn btn-ghost" href="work/index.html">See our work</a></div>
+  <section class="clients" aria-label="Clients">
+    <div class="track" aria-hidden="true">
+      <span>Rajathee Sarees</span><span>Bhagare Misal</span><span>The Woof Parade</span><span>Dynam EV</span><span>Maan Textiles</span><span>SneakCulture</span><span>Yogita MUA</span><span>Home Linen Studio</span>
+      <span>Rajathee Sarees</span><span>Bhagare Misal</span><span>The Woof Parade</span><span>Dynam EV</span><span>Maan Textiles</span><span>SneakCulture</span><span>Yogita MUA</span><span>Home Linen Studio</span>
     </div>
+    <p class="sr-only">Clients include Rajathee Sarees, Bhagare Misal, The Woof Parade, Dynam EV, Maan Textiles, SneakCulture, Yogita MUA and Home Linen Studio.</p>
+    <div class="wrap note"><p class="small">Home Linen Studio grew from 0 to 150k Instagram followers in 18 months with us. <a href="work/index.html">See the work</a></p></div>
   </section>
 
-  <section id="about">
-    <div class="wrap about-grid">
-      <div>
-        <p class="kicker">About</p>
-        <h2>Six years of brands. One of them our own.</h2>
-      </div>
-      <div>
-        <p>Leogo Designs is run by Shweta Phansalkar from Satara and Pune. We started with logos and Instagram, and learnt how Indian shoppers really buy by growing Shweta's food page, Shweta Eats, to 26,000 followers: in DMs, not on websites.</p>
-        <p style="margin-top:14px">When our own jewellery brand, Ikaa, outgrew Shopify and a pile of apps, we built the tools it needed. Those tools are now the stack. Studio work is remote across India, except social media management, which we do for brands in Satara and Pune.</p>
+  <section class="about" id="about">
+    <div class="wrap">
+      <h2 class="rise">Six years of brands. One of them our own.</h2>
+      <div class="about-cols">
+        <p>Leogo is run by Shweta Phansalkar from Pune and Satara. We learnt how Indian shoppers buy by growing her food page, Shweta Eats, to 26,000 followers: in DMs, not on websites.</p>
+        <p>When our jewellery brand Ikaa outgrew Shopify and a pile of apps, we built the tools it needed. They are now the stack, and every brand we work with can use them.</p>
       </div>
     </div>
   </section>
@@ -411,10 +407,9 @@
   <section class="contact" id="contact">
     <div class="wrap">
       <h2>Tell us about your brand.</h2>
-      <p class="lede" style="margin-top:14px">A quick chat on WhatsApp is the fastest way to start. We reply within a working day.</p>
       <div class="btns">
-        <a class="btn btn-primary" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
-        <a class="btn btn-ghost" href="mailto:leogodesigns@gmail.com">leogodesigns@gmail.com</a>
+        <a class="btn" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
+        <a class="btn line" href="mailto:leogodesigns@gmail.com">leogodesigns@gmail.com</a>
       </div>
     </div>
   </section>
@@ -422,7 +417,7 @@
 
 <footer>
   <div class="wrap row">
-    <span>© 2026 Leogo Designs · Satara &amp; Pune</span>
+    <img class="footer-logo" src="leogo_final_logo_11-01.png" alt="Leogo Designs" width="104" height="26">
     <ul>
       <li><a href="https://instagram.com/leogodesigns">Instagram</a></li>
       <li><a href="https://www.linkedin.com/company/leogo-designs/">LinkedIn</a></li>
@@ -430,6 +425,7 @@
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="refunds.html">Refunds</a></li>
     </ul>
+    <span>© 2026 Leogo Designs</span>
   </div>
 </footer>
 </body>
