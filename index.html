@@ -140,6 +140,18 @@
   .facts span { color: var(--muted); font-size: 15px; }
   @media (min-width: 900px) { .facts { grid-template-columns: repeat(4, 1fr); } }
 
+  /* recent work */
+  .cases { display: grid; gap: 28px; margin-top: 40px; }
+  @media (min-width: 768px) { .cases { grid-template-columns: repeat(3, 1fr); } }
+  .case { text-decoration: none; display: block; }
+  .case .cover { aspect-ratio: 4 / 5; overflow: hidden; background: var(--card); }
+  .case .cover img { width: 100%; height: 100%; object-fit: cover; }
+  .case h3 { font-size: 26px; letter-spacing: -0.02em; margin-top: 14px; }
+  .case .meta { color: var(--red); font-weight: 700; font-size: 14px; margin-top: 12px; }
+  .case p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .skel { background: linear-gradient(90deg, var(--card) 0%, #FAFBF8 50%, var(--card) 100%); background-size: 200% 100%; }
+  @media (prefers-reduced-motion: no-preference) { .skel { animation: shimmer 1.4s linear infinite; } @keyframes shimmer { to { background-position: -200% 0; } } }
+
   /* pricing */
   .big { font-size: clamp(64px, 12vw, 168px); font-weight: 900; letter-spacing: -0.05em; line-height: 0.9; color: var(--red); }
   .bigline { font-size: clamp(22px, 2.6vw, 32px); font-weight: 700; letter-spacing: -0.01em; max-width: 30ch; margin-top: 14px; }
@@ -192,7 +204,7 @@
       <li><a href="#stack">Stack</a></li>
       <li><a href="#ikaa">Ikaa</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="work/index.html">Work</a></li>
+      <li><a href="/work">Work</a></li>
     </ul>
     <a class="btn red" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
   </div>
@@ -369,6 +381,14 @@
     </div>
   </section>
 
+  <section id="work">
+    <div class="wrap">
+      <h2 class="rise">Recent work.</h2>
+      <div class="cases" id="cases" aria-live="polite"></div>
+      <div style="margin-top:36px"><a class="btn line" href="/work">All work and reels</a></div>
+    </div>
+  </section>
+
   <section id="pricing" style="background:var(--bg-2)">
     <div class="wrap">
       <p class="eyebrow">Pricing</p>
@@ -406,7 +426,7 @@
       <span>Rajathee Sarees</span><span>Bhagare Misal</span><span>The Woof Parade</span><span>Dynam EV</span><span>Maan Textiles</span><span>SneakCulture</span><span>Yogita MUA</span><span>Home Linen Studio</span>
     </div>
     <p class="sr-only">Clients include Rajathee Sarees, Bhagare Misal, The Woof Parade, Dynam EV, Maan Textiles, SneakCulture, Yogita MUA and Home Linen Studio.</p>
-    <div class="wrap note"><p class="small">Home Linen Studio grew from 0 to 150k Instagram followers in 18 months with us. <a href="work/index.html">See the work</a></p></div>
+    <div class="wrap note"><p class="small">Home Linen Studio grew from 0 to 150k Instagram followers in 18 months with us. <a href="/work">See the work</a></p></div>
   </section>
 
   <section class="about" id="about">
@@ -452,5 +472,7 @@
     });
   });
 </script>
+<script src="/assets/work.js"></script>
+<script>Work.cases(document.getElementById('cases'), 3);</script>
 </body>
 </html>

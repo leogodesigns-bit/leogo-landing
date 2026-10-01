@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "pet-genie",
+    "client": "Pet Genie",
+    "title": "Pet Genie logo",
+    "type": "Logo & branding",
+    "year": "2026",
+    "cover": "/assets/work/petgenie/10.jpg",
+    "summary": "Brand identity for a pet-care app: one brief, three directions, five rounds, one logo the client loved.",
+    "steps": [
+      { "heading": "The brief", "text": "Pet parents aged 20 to 40, premium but not cartoony, modern, earthy and fun.", "image": "/assets/work/petgenie/2.jpg" },
+      { "heading": "Three directions", "text": "A friendly genie character, dog-ear lettering, and a dog icon.", "image": "/assets/work/petgenie/3.jpg" },
+      { "heading": "The pick", "text": "The client loved the genie and the lettering with the dog ears, and asked for a mix of both.", "image": "/assets/work/petgenie/4.jpg" },
+      { "heading": "Make it simpler", "text": "Fewer details, same smile, so it works as an app icon.", "image": "/assets/work/petgenie/5.jpg" },
+      { "heading": "The best of both", "text": "The paw from one genie, the ponytail from the other.", "image": "/assets/work/petgenie/6.jpg" },
+      { "heading": "Ears, or no ears", "text": "Two versions: ears when the name stands alone, clean letters beside the genie.", "image": "/assets/work/petgenie/8.jpg" },
+      { "heading": "The colour", "text": "Forest green, mustard, rose and cream, tested across the whole set.", "image": "/assets/work/petgenie/9.jpg" }
+    ],
+    "reel": "/assets/work/petgenie/reel.mp4"
+  },
+  {
+    "slug": "rajathee",
+    "client": "Rajathee Sarees",
+    "title": "Rajathee Sarees identity",
+    "type": "Logo & branding",
+    "year": "2026",
+    "cover": "/assets/work/visiting-card.jpg",
+    "summary": "Logo, monogram, stationery and bill book for a Pune saree house.",
+    "link": "/case-studies/rajathee.html"
+  },
+  {
+    "slug": "ikaa",
+    "client": "Ikaa Jewellery",
+    "title": "Ikaa, off Shopify",
+    "type": "Store & software",
+    "year": "2026",
+    "cover": "/assets/stack/angan-ikaa-store.jpg",
+    "summary": "Our own jewellery brand, moved to Angan, Setu, Dor, Hisaab Kitab and Vaani.",
+    "link": "/#ikaa"
+  }
+]
