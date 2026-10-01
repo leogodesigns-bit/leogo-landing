@@ -1,1882 +1,436 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Leogo Designs — We Build Brands That Mean Business</title>
-<meta name="description" content="Design + tech agency based in Satara & Pune. Branding, social media, Shopify websites, and in-house products — Vaani (AI WhatsApp sales bot), Dor (Shopify ↔ Google Sheets sync), and Setu (fast Shopify checkout)." />
-<link rel="icon" type="image/png" href="leogo_final_logo_11-01.png" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leogo Designs | Brand studio and D2C software, Satara & Pune</title>
+<meta name="description" content="Leogo Designs builds brands and the software they sell with: Angan storefronts, Setu checkout, Dor stock sync, Hisaab Kitab books and GST, and Vaani for WhatsApp and Instagram sales. Our own jewellery brand, Ikaa, runs on it.">
+<link rel="icon" href="leogo_cropped.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syne:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red: #E8191A;
-    --orange: #F5A623;
-    --black: #000000;
-    --white: #FFFFFF;
-    --ink: #0a0a0a;
-    --ink-2: #161616;
-    --soft: #faf8f5;
-    --soft-2: #f0ece5;
-    --line: rgba(0,0,0,0.08);
-    --line-dark: rgba(255,255,255,0.08);
-    --muted: #5a5a5a;
-    --grad: linear-gradient(135deg, #E8191A 0%, #F5A623 100%);
+    --paper: #F6F2EC;
+    --paper-2: #EFE9E0;
+    --ink: #181513;
+    --muted: #5B544D;
+    --line: #DDD4C8;
+    --red: #C8211B;
+    --dark: #1D1916;
+    --dark-line: #3A332D;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "IBM Plex Sans", system-ui, sans-serif;
+    --max: 1120px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  *::selection { background: var(--red); color: var(--white); }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img, video { display: block; max-width: 100%; height: auto; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  .hero-grid > *, .product > *, .about-grid > *, .halves > *, .steps > * { min-width: 0; }
+  html, body { overflow-x: clip; }
+  .bar .btn { white-space: nowrap; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; line-height: 1.12; }
+  h1 { font-size: clamp(40px, 7vw, 76px); }
+  h2 { font-size: clamp(30px, 4.6vw, 48px); }
+  h3 { font-size: 24px; }
+  .kicker { font: 600 13px/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 18px; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 640px; }
+  section { padding: 80px 0; border-top: 1px solid var(--line); }
+  .btn { display: inline-block; padding: 14px 22px; border-radius: 3px; font: 600 15px/1 var(--sans); text-decoration: none; border: 1.5px solid var(--ink); }
+  .btn-primary { background: var(--red); border-color: var(--red); color: #fff; }
+  .btn-ghost { background: transparent; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .price { font-weight: 600; white-space: nowrap; }
+  .note { font-size: 14px; color: var(--muted); }
+  .skip { position: absolute; left: -999px; } .skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 20; }
 
-  html { scroll-behavior: smooth; overflow-x: hidden; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: var(--ink);
-    background: var(--white);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
-  @media (min-width: 1025px) and (pointer: fine) {
-    body, a, button { cursor: none; }
-  }
+  /* header */
+  header { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .bar img { height: 30px; width: auto; }
+  nav ul { display: none; list-style: none; gap: 26px; }
+  nav a { text-decoration: none; font-size: 15px; font-weight: 500; }
+  nav a:focus-visible, .btn:focus-visible, summary:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+  .bar .btn { padding: 10px 14px; font-size: 14px; }
+  @media (min-width: 900px) { nav ul { display: flex; } }
 
-  img { max-width: 100%; display: block; }
-  .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+  /* hero */
+  .hero { padding: 64px 0 72px; border-top: 0; }
+  .hero-grid { display: grid; gap: 40px; }
+  .hero h1 em { font-style: italic; color: var(--red); }
+  .hero .lede { margin-top: 22px; }
+  .hero figure video { width: 100%; border: 1px solid var(--line); background: #000; }
+  .hero figcaption { margin-top: 10px; }
+  @media (min-width: 960px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 56px; } }
 
-  /* CURSOR */
-  .cursor-glow {
-    position: fixed; top: 0; left: 0; width: 44px; height: 44px;
-    border-radius: 50%; pointer-events: none; z-index: 9999;
-    border: 1.5px solid var(--orange);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: width .25s, height .25s, background .25s, border-color .25s, opacity .3s;
-    will-change: transform;
-    mix-blend-mode: difference;
-  }
-  .cursor-dot {
-    position: fixed; top: 0; left: 0; width: 8px; height: 8px;
-    border-radius: 50%; background: var(--red); pointer-events: none;
-    z-index: 10000; transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: width .2s, height .2s, opacity .3s;
-    will-change: transform;
-    box-shadow: 0 0 12px rgba(232,25,26,0.6);
-  }
-  .cursor-glow.active, .cursor-dot.active { opacity: 1; }
-  .cursor-glow.hover {
-    width: 72px; height: 72px;
-    background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%);
-  }
-  .cursor-dot.hover {
-    width: 4px; height: 4px;
-  }
-  @media (max-width: 1024px), (pointer: coarse) {
-    .cursor-glow, .cursor-dot { display: none; }
-  }
+  /* two halves */
+  .halves { display: grid; gap: 0; margin-top: 44px; border: 1px solid var(--line); }
+  .half { padding: 30px 26px; }
+  .half + .half { border-top: 1px solid var(--line); }
+  .half h3 { margin-bottom: 8px; }
+  .list { list-style: none; margin-top: 18px; }
+  .list li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 16px; }
+  .list li span:first-child { color: var(--ink); }
+  @media (min-width: 900px) { .halves { grid-template-columns: 1fr 1fr; } .half + .half { border-top: 0; border-left: 1px solid var(--line); } }
 
-  /* NOISE */
-  .noise {
-    position: fixed; inset: 0; pointer-events: none; z-index: 1;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
+  /* stack */
+  .product { display: grid; gap: 22px; padding: 40px 0; border-top: 1px solid var(--line); }
+  .product:first-of-type { border-top: 0; }
+  .product .name { font-family: var(--serif); font-size: 34px; }
+  .product .what { font: 600 13px/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+  .product p { margin-top: 12px; max-width: 560px; }
+  .product .from { margin-top: 14px; font-size: 16px; }
+  .product figure img { border: 1px solid var(--line); width: 100%; }
+  @media (min-width: 900px) { .product { grid-template-columns: 1fr 1fr; align-items: start; gap: 48px; } }
+  details { margin-top: 18px; border: 1px solid var(--line); background: #fff8f0; }
+  summary { cursor: pointer; list-style: none; padding: 14px 16px; font-weight: 600; font-size: 15px; display: flex; justify-content: space-between; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-weight: 500; }
+  details[open] summary::after { content: "\2212"; }
+  .tbl-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 16px; border-top: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 600; font-size: 13px; letter-spacing: 0.04em; color: var(--muted); }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  .terms { padding: 12px 16px 16px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+  .terms p + p { margin-top: 6px; }
 
-  /* NAV */
-  .nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    height: 96px;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    overflow: visible;
-  }
-  .nav-inner {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 48px;
-    padding-left: 16px;
-    overflow: visible;
-  }
-  .nav-logo {
-    display: inline-flex; align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-    line-height: 0;
-    padding-left: 24px;
-    margin-top: 80px;
-  }
-  .nav-logo img {
-    display: block;
-    height: 140px;
-    width: auto;
-    mix-blend-mode: screen;
-  }
-  .nav-links {
-    display: flex; align-items: center;
-    gap: 36px;
-  }
-  .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: #ffffff; }
-  .nav-cta {
-    background: linear-gradient(135deg, #E8191A 0%, #F5A623 100%);
-    color: #ffffff !important;
-    padding: 10px 22px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    box-shadow: 0 8px 24px -8px rgba(232,25,26,0.5);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .nav-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 12px 32px -8px rgba(232,25,26,0.7);
-  }
-  .nav-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    padding: 0;
-    width: 44px; height: 44px;
-    flex-direction: column;
-    align-items: center; justify-content: center;
-    cursor: pointer;
-  }
-  .nav-toggle span {
-    display: block; width: 22px; height: 1.5px;
-    background: #ffffff; margin: 3px 0;
-    transition: 0.3s;
-  }
-  .nav-toggle.open span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .nav-toggle.open span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+  /* proof (dark) */
+  .proof { background: var(--dark); color: #F3EEE7; border-top: 0; }
+  .proof .lede, .proof .note { color: #BFB5A9; }
+  .steps { display: grid; gap: 28px; margin-top: 44px; }
+  .step img { border: 1px solid var(--dark-line); width: 100%; }
+  .step h3 { margin-top: 14px; font-size: 21px; }
+  .step p { margin-top: 6px; color: #CFC6BB; font-size: 15px; }
+  @media (min-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+  .figures { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 48px; border-top: 1px solid var(--dark-line); }
+  .figures div { padding: 22px 0 6px; }
+  .figures b { display: block; font: 500 34px/1.1 var(--serif); }
+  .figures span { font-size: 14px; color: #BFB5A9; }
+  @media (min-width: 900px) { .figures { grid-template-columns: repeat(4, 1fr); } }
 
-  /* HERO */
-  .hero {
-    background: var(--black); color: var(--white);
-    padding: 140px 0 60px; position: relative; overflow: hidden;
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex; align-items: center;
-  }
-  .hero::after {
-    content: ''; position: absolute; inset: 0;
-    pointer-events: none; z-index: 1;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='hn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23hn)'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
-  }
-  .mesh { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-  .mesh-blob {
-    position: absolute; border-radius: 50%;
-    filter: blur(90px); will-change: transform;
-  }
-  .mesh-blob.b1 {
-    width: 600px; height: 600px; top: 5%; left: 15%;
-    background: radial-gradient(circle, rgba(232,25,26,1) 0%, transparent 65%);
-    opacity: 0.35;
-    animation: float1 22s ease-in-out infinite;
-  }
-  .mesh-blob.b2 {
-    width: 400px; height: 400px; bottom: -80px; left: -80px;
-    background: radial-gradient(circle, rgba(245,166,35,1) 0%, transparent 65%);
-    opacity: 0.20;
-    animation: float2 26s ease-in-out infinite;
-  }
-  .mesh-blob.b3 {
-    display: block;
-    left: -100px; top: 40%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(232,25,26,0.15) 0%, transparent 70%);
-    pointer-events: none;
-    animation: float3 30s ease-in-out infinite;
-  }
-  @keyframes float1 {
-    0%,100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(-80px,60px) scale(1.1); }
-  }
-  @keyframes float2 {
-    0%,100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(120px,-80px) scale(1.15); }
-  }
-  @keyframes float3 {
-    0%,100% { transform: translate(0,0) scale(1); }
-    33% { transform: translate(100px,80px) scale(0.9); }
-    66% { transform: translate(-100px,-60px) scale(1.1); }
-  }
-  .grid-overlay {
-    position: absolute; inset: 0; z-index: 1;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-  }
+  /* pricing compare */
+  .compare { margin-top: 36px; border: 1px solid var(--line); background: #fff8f0; }
+  .bundles { margin-top: 28px; border: 1px solid var(--line); }
 
-  /* PARTICLES */
-  .particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-  .particle {
-    position: absolute; border-radius: 50%;
-    opacity: 0; will-change: transform, opacity;
-    animation: drift linear infinite;
-  }
-  @keyframes drift {
-    0% { transform: translate(0, 0); opacity: 0; }
-    10% { opacity: 0.8; }
-    90% { opacity: 0.8; }
-    100% { transform: translate(var(--dx), var(--dy)); opacity: 0; }
-  }
+  /* clients */
+  .clients-list { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 36px; border-top: 1px solid var(--line); }
+  .clients-list li { list-style: none; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .clients-list b { display: block; font-weight: 600; }
+  .clients-list span { font-size: 14px; color: var(--muted); }
+  @media (min-width: 900px) { .clients-list { grid-template-columns: repeat(4, 1fr); } }
 
-  .hero-inner {
-    position: relative; z-index: 2;
-    text-align: center;
-    width: 100%; max-width: 800px;
-    padding: 0 5%;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
+  /* about */
+  .about-grid { display: grid; gap: 28px; }
+  @media (min-width: 900px) { .about-grid { grid-template-columns: 1fr 1fr; gap: 56px; } }
 
-  .hero-eyebrow {
-    display: inline-block;
-    font-size: 12px; font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
-    padding: 8px 18px;
-    border: 1px solid transparent;
-    background:
-      linear-gradient(#111, #111) padding-box,
-      linear-gradient(90deg, #E8191A, #F5A623) border-box;
-    border-radius: 999px;
-    margin-bottom: 32px;
-    opacity: 0; transform: translateY(10px);
-    animation: eyebrowIn 0.8s cubic-bezier(.2,.8,.2,1) 0s forwards;
-  }
-  @keyframes eyebrowIn { to { opacity: 1; transform: translateY(0); } }
-  @keyframes pulse {
-    0%,100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.85); }
-  }
-
-  .hero h1 {
-    display: block;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: clamp(3rem, 5.5vw, 5.2rem);
-    font-weight: 900;
-    font-style: normal;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    text-align: center;
-    color: #ffffff;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 24px;
-  }
-  .hero h1 .italic {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-weight: 400;
-    background: linear-gradient(90deg, #E8191A 0%, #F5A623 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    padding-right: 60px;
-  }
-  .hero-bar {
-    width: 48px; height: 3px;
-    background: #E8191A;
-    margin: 24px auto;
-    border-radius: 1px;
-  }
-  @keyframes headlineIn {
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero h1 .grad {
-    background: linear-gradient(135deg, #E8191A 0%, #F5A623 100%);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent; color: transparent;
-    font-style: italic; font-weight: 600;
-  }
-
-  .hero p.sub {
-    font-size: 1.05rem; color: rgba(255,255,255,0.5);
-    max-width: 560px; margin: 0 auto; line-height: 1.8;
-    text-align: center;
-    opacity: 0; transform: translateY(20px);
-    animation: subIn 0.9s cubic-bezier(.2,.8,.2,1) 0s forwards;
-  }
-  @keyframes subIn { to { opacity: 1; transform: translateY(0); } }
-
-  .hero-ctas {
-    display: flex; gap: 12px; flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 36px;
-    position: relative;
-    opacity: 0; transform: translateY(20px);
-    animation: subIn 0.9s cubic-bezier(.2,.8,.2,1) 0s forwards;
-  }
-  .hero-ctas .btn-primary {
-    box-shadow:
-      0 0 32px rgba(232,25,26,0.4),
-      0 12px 36px -10px rgba(232,25,26,0.6),
-      inset 0 1px 0 rgba(255,255,255,0.25);
-  }
-  .hero-ctas .btn-primary:hover {
-    box-shadow:
-      0 0 40px rgba(232,25,26,0.55),
-      0 18px 48px -10px rgba(232,25,26,0.8),
-      inset 0 1px 0 rgba(255,255,255,0.3);
-  }
-  .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 16px 28px; border-radius: 999px;
-    font-weight: 600; font-size: 14.5px;
-    border: none; text-decoration: none;
-    transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s, background .2s;
-    position: relative; overflow: hidden;
-  }
-  .btn-primary {
-    background: var(--grad); color: var(--white);
-    box-shadow: 0 12px 36px -10px rgba(232,25,26,0.6), inset 0 1px 0 rgba(255,255,255,0.25);
-  }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 48px -10px rgba(232,25,26,0.8), inset 0 1px 0 rgba(255,255,255,0.3);
-  }
-  .btn::after {
-    content: ''; position: absolute; top: 0; left: -100%;
-    width: 60%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left .7s ease;
-    pointer-events: none;
-  }
-  .btn:hover::after { left: 130%; }
-
-  .btn-ghost {
-    background: rgba(255,255,255,0.04); color: var(--white);
-    border: 1px solid rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  }
-  .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); }
-  .btn svg { width: 18px; height: 18px; }
-
-  .hero-stats {
-    display: flex; gap: 48px; flex-wrap: wrap;
-    margin: 32px auto 0;
-    padding-top: 24px;
-    width: 100%;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    justify-content: center;
-    opacity: 0; transform: translateY(20px);
-    animation: subIn 0.9s cubic-bezier(.2,.8,.2,1) 0s forwards;
-  }
-  .stat { text-align: center; }
-  .stat .num {
-    font-family: 'Bricolage Grotesque', 'Syne', sans-serif;
-    font-size: 2.2rem; font-weight: 800; line-height: 1;
-    letter-spacing: -0.02em;
-    background: linear-gradient(90deg, #E8191A 0%, #F5A623 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    display: inline-block; min-width: 1ch;
-  }
-  .stat .num.flip { animation: numFlip 0.3s ease-out; }
-  @keyframes numFlip {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-4px) scale(1.08); }
-    100% { transform: translateY(0); }
-  }
-  .stat .label {
-    font-size: 10px; color: rgba(255,255,255,0.35);
-    margin-top: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-    font-weight: 500;
-  }
-
-  /* SECTION HEADERS */
-  section { padding: 80px 0; position: relative; }
-  .section-head { text-align: center; margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto; }
-  .section-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 7px 14px; border-radius: 999px;
-    background: rgba(232,25,26,0.07); color: var(--red);
-    font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; margin-bottom: 24px;
-    border: 1px solid rgba(232,25,26,0.15);
-  }
-  .section-head h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(36px, 5vw, 64px); font-weight: 700;
-    line-height: 1.02; margin-bottom: 20px;
-    letter-spacing: -0.035em;
-  }
-  .section-head h2 .grad {
-    background: var(--grad); -webkit-background-clip: text;
-    background-clip: text; -webkit-text-fill-color: transparent;
-    font-style: italic; font-weight: 600;
-  }
-  .section-head p {
-    font-size: 17px; color: var(--muted); max-width: 580px; margin: 0 auto;
-    line-height: 1.65;
-  }
-
-  /* SERVICES */
-  .services { background: var(--soft); position: relative; }
-  .services .section-head h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 900;
-    overflow: visible;
-  }
-  .services .section-head h2 .grad {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-weight: 400;
-    padding-right: 80px;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-  }
-  .services::before {
-    content: ''; position: absolute; inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.06) 1px, transparent 0);
-    background-size: 32px 32px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-    opacity: 0.5;
-  }
-  .services .container { position: relative; z-index: 1; }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
-    perspective: 1500px;
-  }
-  .service-card {
-    background: #0f0f0f; color: var(--white);
-    border-radius: 24px; padding: 40px;
-    position: relative; overflow: hidden;
-    transform-style: preserve-3d;
-    transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
-    will-change: transform;
-  }
-  .service-card-inner {
-    position: relative; z-index: 2;
-    transform-style: preserve-3d;
-  }
-  .service-card-inner > * { transform: translateZ(20px); }
-
-  /* Left gradient border — appears on hover */
-  .service-card::before {
-    content: ''; position: absolute;
-    left: 0; top: 0; bottom: 0; width: 3px;
-    background: linear-gradient(180deg, var(--red), var(--orange));
-    opacity: 0;
-    transition: opacity .35s;
-    z-index: 3;
-  }
-  .service-card:hover::before { opacity: 1; }
-
-  .service-card:hover { transform: translateY(-4px); }
-
-  .service-num {
-    position: absolute; top: 24px; right: 32px;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 4rem; font-weight: 900;
-    color: rgba(255,255,255,0.06);
-    line-height: 1; letter-spacing: -0.02em;
-    pointer-events: none;
-  }
-
-  .service-card h3 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 1.4rem; font-weight: 700; color: var(--white);
-    margin-bottom: 12px; letter-spacing: -0.015em;
-  }
-  .service-card h3 a { color: inherit; text-decoration: none; }
-  .service-card h3 a:hover { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .service-card p {
-    color: rgba(255,255,255,0.6); font-size: 14.5px; margin-bottom: 28px;
-    line-height: 1.6;
-  }
-  .service-price {
-    display: flex; align-items: baseline; gap: 8px;
-    flex-wrap: wrap;
-    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .service-price .amt {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 2rem; font-weight: 800; letter-spacing: -0.02em;
-    color: var(--white);
-  }
-  .service-price .unit,
-  .service-price .price-note { font-size: 0.85rem; color: rgba(255,255,255,0.4); }
-  .service-price.custom .amt {
-    background: var(--grad); -webkit-background-clip: text;
-    background-clip: text; -webkit-text-fill-color: transparent;
-    font-size: 1.4rem; font-style: italic; font-weight: 700;
-  }
-
-  /* VAANI */
-  .vaani {
-    background: #0a0a0a; color: var(--white); position: relative;
-    overflow: hidden;
-  }
-  .vaani .bg-orbs { position: absolute; inset: 0; pointer-events: none; }
-  .vaani .bg-orbs::before {
-    content: ''; position: absolute;
-    width: 900px; height: 900px; border-radius: 50%;
-    top: 50%; left: 50%; transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(232,25,26,0.18) 0%, transparent 60%);
-    filter: blur(100px);
-  }
-  .vaani .container { position: relative; z-index: 1; }
-  .vaani-inner {
-    display: grid; grid-template-columns: 55% 45%; gap: 60px; align-items: center;
-  }
-
-  .vaani-eyebrow {
-    display: inline-block;
-    font-size: 12px; font-weight: 500;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
-    padding: 8px 18px;
-    border: 1px solid transparent;
-    background:
-      linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-      linear-gradient(90deg, var(--red), var(--orange)) border-box;
-    border-radius: 999px;
-    margin-bottom: 28px;
-  }
-
-  .vaani h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 900;
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    line-height: 1.05; letter-spacing: -0.02em;
-    color: var(--white); margin-bottom: 12px;
-  }
-  .vaani h2 .italic.grad {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic; font-weight: 400;
-    background: var(--grad);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent; color: transparent;
-    padding-right: 0.18em;
-  }
-
-  .vaani-sub {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: rgba(255,255,255,0.55);
-    margin-top: 12px;
-    line-height: 1.3;
-  }
-
-  .vaani-stats {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
-    margin: 40px 0 36px;
-  }
-  .vaani-stat {
-    position: relative; background: #111;
-    border-radius: 14px; padding: 22px 18px;
-    overflow: hidden;
-  }
-  .vaani-stat::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--red), var(--orange));
-  }
-  .vaani-stat .num {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 2rem; font-weight: 800; color: var(--white);
-    letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;
-  }
-  .vaani-stat .label {
-    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-  }
-
-  .vaani-features {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 14px 28px; list-style: none;
-    margin-bottom: 36px;
-  }
-  .vaani-features li {
-    display: flex; align-items: center; gap: 12px;
-    color: rgba(255,255,255,0.8); font-size: 14.5px;
-    line-height: 1.45;
-  }
-  .vaani-features li::before {
-    content: ''; width: 8px; height: 8px; border-radius: 50%;
-    background: var(--red);
-    box-shadow: 0 0 10px rgba(232,25,26,0.55);
-    flex-shrink: 0;
-  }
-
-  /* IKAA PHONE MOCKUP — static */
-  .phone {
-    width: 100%; max-width: 340px; margin: 0 auto;
-    background: #1a0f0a;
-    border-radius: 24px;
-    padding: 0; overflow: hidden;
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,0.05),
-      0 60px 120px -30px rgba(232,25,26,0.3),
-      0 30px 60px -15px rgba(0,0,0,0.55);
-  }
-  .phone-header {
-    background: #2d1a0e;
-    padding: 14px 14px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .phone-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: #fff;
-    overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .phone-avatar img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .phone-meta { flex: 1; min-width: 0; }
-  .phone-name { font-weight: 700; font-size: 14px; color: #fff; line-height: 1.2; }
-  .phone-presence {
-    font-size: 12px; color: #4ade80;
-    margin-top: 2px;
-  }
-
-  .phone-chat {
-    background: #120a05;
-    padding: 16px 12px;
-    display: flex; flex-direction: column; gap: 10px;
-    max-height: 440px;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-  }
-  .phone-chat::-webkit-scrollbar { display: none; }
-  .phone-chat > * {
-    opacity: 0; transform: translateY(8px);
-    transition: opacity .35s ease, transform .35s cubic-bezier(.2,.8,.2,1);
-  }
-  .phone-chat > *.show {
-    opacity: 1; transform: translateY(0);
-  }
-
-  .bubble {
-    max-width: 82%;
-    padding: 8px 10px 6px;
-    border-radius: 12px;
-    font-size: 13px; line-height: 1.4;
-  }
-  .bubble.them {
-    background: #2d1a0e; color: #fff;
-    align-self: flex-start;
-    border-top-left-radius: 4px;
-  }
-  .bubble.us {
-    background: #25D366; color: #000;
-    align-self: flex-end;
-    border-top-right-radius: 4px;
-    font-weight: 500;
-  }
-  .bubble .time {
-    display: block;
-    font-size: 10px;
-    color: rgba(255,255,255,0.5);
-    margin-top: 4px;
-    text-align: right;
-  }
-  .bubble.us .time { color: rgba(0,0,0,0.55); }
-
-  .bubble-ctas {
-    display: flex; flex-direction: column; gap: 6px;
-    margin-top: 8px;
-  }
-  .bubble-cta {
-    border: 1px solid rgba(255,255,255,0.18);
-    background: transparent;
-    color: rgba(255,255,255,0.85);
-    padding: 7px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-    text-align: center;
-    font-weight: 500;
-  }
-
-  .product-card {
-    background: #2d1a0e;
-    border-radius: 12px;
-    padding: 10px;
-    max-width: 88%;
-    align-self: flex-start;
-  }
-  .product-card-row {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 6px; margin-bottom: 8px;
-  }
-  .product-tile {
-    border-radius: 8px;
-    background: #1a0f0a;
-    padding: 6px 4px 6px;
-    display: flex; flex-direction: column;
-    align-items: stretch;
-    gap: 5px;
-  }
-  .product-tile .swatch {
-    aspect-ratio: 1;
-    border-radius: 6px;
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    background: #1a0f0a;
-  }
-  .product-tile .name {
-    font-size: 9.5px; color: rgba(255,255,255,0.85);
-    text-align: center; line-height: 1.15;
-  }
-  .product-tile .price {
-    font-size: 10px; color: var(--orange);
-    font-weight: 700; text-align: center;
-  }
-  .product-card .time {
-    font-size: 10px; color: rgba(255,255,255,0.5);
-    text-align: right;
-  }
-
-  .phone-input {
-    padding: 10px;
-    background: #1a0f0a;
-    display: flex; align-items: center; gap: 8px;
-    border-top: 1px solid rgba(255,255,255,0.04);
-  }
-  .phone-input-box {
-    flex: 1; background: #2d1a0e; border-radius: 999px;
-    padding: 9px 14px; font-size: 12px; color: rgba(255,255,255,0.45);
-  }
-  .phone-input-send {
-    width: 34px; height: 34px; border-radius: 50%;
-    background: #25D366;
-    display: flex; align-items: center; justify-content: center;
-    color: #fff; flex-shrink: 0;
-  }
-  .phone-input-send svg { width: 16px; height: 16px; }
-
-  /* CLIENTS */
-  .clients { background: #0a0a0a; color: var(--white); position: relative; }
-  .clients::before {
-    content: ''; position: absolute; inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
-    background-size: 32px 32px;
-    mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
-    opacity: 0.5;
-  }
-  .clients .container { position: relative; z-index: 1; }
-  .clients .section-tag {
-    display: inline-block;
-    background:
-      linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-      linear-gradient(90deg, var(--red), var(--orange)) border-box;
-    border: 1px solid transparent;
-    color: rgba(255,255,255,0.65);
-    font-weight: 500; letter-spacing: 0.2em;
-    padding: 8px 18px;
-  }
-  .clients .section-head h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 900; color: var(--white);
-    overflow: visible;
-  }
-  .clients .section-head h2 .grad {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-weight: 400;
-    padding-right: 60px;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-  }
-  .clients .section-head p { color: rgba(255,255,255,0.5); }
-  .clients-block { margin-bottom: 56px; }
-  .clients-block:last-child { margin-bottom: 0; }
-  .clients-label {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 8px 18px; border-radius: 999px;
-    font-size: 11.5px; font-weight: 500; letter-spacing: 0.2em;
-    text-transform: uppercase; margin-bottom: 28px;
-    border: 1px solid transparent;
-  }
-  .clients-label.current {
-    background:
-      linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-      linear-gradient(90deg, var(--red), var(--orange)) border-box;
-    color: rgba(255,255,255,0.7);
-  }
-  .clients-label.current::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--red); box-shadow: 0 0 8px var(--red);
-    animation: pulse 2s infinite;
-  }
-  .clients-label.past {
-    background: rgba(0,0,0,0.06); color: var(--ink);
-    border-color: rgba(0,0,0,0.1);
-  }
-
-  /* CURRENT CLIENTS MARQUEE */
-  .marquee-wrap {
-    margin: 0 -28px;
-    mask-image: linear-gradient(to right, transparent, #0a0a0a 10%, #0a0a0a 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, #0a0a0a 10%, #0a0a0a 90%, transparent);
-  }
-  .marquee { overflow: hidden; position: relative; }
-  .marquee-track {
-    display: flex; gap: 14px; width: max-content;
-    animation: marqueeLeft 35s linear infinite;
-  }
-  .marquee:hover .marquee-track { animation-play-state: paused; }
-  @keyframes marqueeLeft {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  .marquee-card {
-    background: #0f0f0f;
-    border-left: 3px solid #E8191A;
-    border-radius: 12px;
-    padding: 16px 24px;
-    min-width: 220px;
-    display: flex; flex-direction: column; gap: 4px;
-    color: var(--white); flex-shrink: 0;
-  }
-  .marquee-card .name {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 700; font-size: 1rem;
-    color: var(--white); letter-spacing: -0.01em;
-  }
-  .marquee-card .note {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.4);
-  }
-
-  .clients-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-  }
-  .client-card {
-    position: relative;
-    background: #0f0f0f; color: var(--white);
-    border-radius: 16px;
-    padding: 26px 24px 24px 28px;
-    overflow: hidden;
-    transition: transform .3s, box-shadow .3s;
-  }
-  .client-card::before {
-    content: ''; position: absolute;
-    left: 0; top: 0; bottom: 0; width: 3px;
-    background: linear-gradient(180deg, var(--red), var(--orange));
-  }
-  .client-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 18px 40px -20px rgba(0,0,0,0.4);
-  }
-  .client-card .name {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 700; font-size: 1.1rem;
-    color: var(--white);
-    letter-spacing: -0.01em;
-    margin-bottom: 4px;
-  }
-  .client-card .note {
-    font-size: 13px;
-    color: rgba(255,255,255,0.4);
-  }
-  .client-card .badge {
-    display: inline-flex; align-items: center;
-    margin-top: 12px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: rgba(232,25,26,0.15);
-    color: var(--red);
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.04em;
-    border: 1px solid rgba(232,25,26,0.3);
-  }
-
-  .past-toggle {
-    display: inline-block;
-    background: none; border: none; padding: 0;
-    font: inherit;
-    font-size: 13px;
-    color: rgba(255,255,255,0.3);
-    cursor: pointer;
-    transition: color .2s;
-  }
-  .past-toggle:hover { color: rgba(255,255,255,0.7); }
-  .past-toggle .past-toggle-hide { display: none; }
-  .past-toggle[aria-expanded="true"] .past-toggle-show { display: none; }
-  .past-toggle[aria-expanded="true"] .past-toggle-hide { display: inline; }
-
-  .past-grid-wrap {
-    max-height: 0; overflow: hidden;
-    transition: max-height .6s cubic-bezier(.2,.8,.2,1), margin-top .4s ease;
-  }
-  .past-grid-wrap.open {
-    max-height: 2400px;
-    margin-top: 24px;
-  }
-
-  /* ABOUT */
-  .about { background: var(--soft); position: relative; overflow: hidden; }
-  .about::before {
-    content: ''; position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.06;
-  }
-  .about::after {
-    content: ''; position: absolute;
-    top: -100px; right: -100px; width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(232,25,26,0.08) 0%, transparent 70%);
-    filter: blur(40px);
-  }
-  .about .container { position: relative; z-index: 1; }
-  .about-inner {
-    display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center;
-  }
-  .about-text h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 900;
-    font-size: clamp(36px, 5vw, 60px);
-    line-height: 1.05; margin-bottom: 28px;
-    letter-spacing: -0.025em;
-    overflow: visible;
-  }
-  .about-text h2 .grad {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic; font-weight: 400;
-    background: var(--grad); -webkit-background-clip: text;
-    background-clip: text; -webkit-text-fill-color: transparent;
-    padding-right: 0.15em;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-  }
-  .about-text p { color: var(--muted); font-size: 17px; margin-bottom: 20px; line-height: 1.7; }
-  .about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .about-stat {
-    padding: 30px 26px; border-radius: 16px;
-    background: #0f0f0f; color: var(--white);
-    transition: transform .3s, box-shadow .3s;
-  }
-  .about-stat:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.4);
-  }
-  .about-stat .num {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 3rem; font-weight: 900; line-height: 1; margin-bottom: 10px;
-    letter-spacing: -0.03em;
-    background: var(--grad); -webkit-background-clip: text;
-    background-clip: text; -webkit-text-fill-color: transparent;
-    display: inline-block;
-  }
-  .about-stat .num.flip { animation: numFlip 0.3s ease-out; }
-  .about-stat .lbl { font-size: 13px; color: rgba(255,255,255,0.6); font-weight: 500; }
-
-  /* CONTACT */
-  .contact { background: #0a0a0a; color: var(--white); position: relative; overflow: hidden; }
-  .contact .bg-orbs { position: absolute; inset: 0; pointer-events: none; }
-  .contact .bg-orbs::before, .contact .bg-orbs::after {
-    content: ''; position: absolute; border-radius: 50%;
-    filter: blur(90px); will-change: transform;
-  }
-  .contact .bg-orbs::before {
-    top: -150px; right: -150px; width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(232,25,26,0.5) 0%, transparent 70%);
-    animation: float1 24s ease-in-out infinite;
-  }
-  .contact .bg-orbs::after {
-    bottom: -150px; left: -150px; width: 450px; height: 450px;
-    background: radial-gradient(circle, rgba(245,166,35,0.4) 0%, transparent 70%);
-    animation: float2 28s ease-in-out infinite;
-  }
-  .contact-inner { position: relative; z-index: 1; text-align: center; }
-  .contact h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 900;
-    font-size: clamp(40px, 6vw, 84px);
-    line-height: 1.05; margin-bottom: 24px;
-    letter-spacing: -0.025em;
-    overflow: visible;
-  }
-  .contact h2 .grad {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic; font-weight: 400;
-    background: var(--grad); -webkit-background-clip: text;
-    background-clip: text; -webkit-text-fill-color: transparent;
-    padding-right: 0.15em;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-  }
-  .contact p.sub {
-    color: rgba(255,255,255,0.65); font-size: 18px; max-width: 560px;
-    margin: 0 auto 48px; line-height: 1.65;
-  }
-  .contact-cta-wrap { position: relative; display: inline-block; margin-bottom: 18px; }
-  .contact-cta-wrap::before {
-    content: ''; position: absolute; inset: -50px;
-    background: radial-gradient(circle, rgba(232,25,26,0.5) 0%, transparent 60%);
-    filter: blur(40px); z-index: 0; opacity: 0.9;
-    animation: glowPulse 3s ease-in-out infinite;
-  }
-  @keyframes glowPulse {
-    0%, 100% { opacity: 0.7; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.08); }
-  }
-  .contact-cta {
-    position: relative; z-index: 1;
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 22px 38px; border-radius: 999px;
-    background: var(--grad); color: var(--white);
-    font-weight: 600; font-size: 17px; text-decoration: none;
-    box-shadow:
-      0 20px 60px -10px rgba(232,25,26,0.7),
-      inset 0 1px 0 rgba(255,255,255,0.3);
-    transition: transform .3s, box-shadow .3s;
-    overflow: hidden;
-  }
-  .contact-cta::after {
-    content: ''; position: absolute; top: 0; left: -100%;
-    width: 60%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left .8s ease;
-  }
-  .contact-cta:hover::after { left: 130%; }
-  .contact-cta:hover {
-    transform: translateY(-3px);
-    box-shadow:
-      0 28px 70px -10px rgba(232,25,26,0.85),
-      inset 0 1px 0 rgba(255,255,255,0.4);
-  }
-  .contact-cta svg { width: 22px; height: 22px; }
-
-  .contact-secondary {
-    display: inline-block;
-    margin-bottom: 72px;
-    font-size: 14px; color: rgba(255,255,255,0.55);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.25);
-    padding-bottom: 2px;
-    transition: color .2s, border-color .2s;
-  }
-  .contact-secondary:hover {
-    color: var(--white);
-    border-color: var(--orange);
-  }
-
-  .contact-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .contact-card {
-    position: relative;
-    background: #0f0f0f;
-    border-radius: 16px; padding: 24px 26px 24px 30px; text-align: left;
-    display: flex; align-items: center; gap: 16px;
-    transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s;
-    min-width: 260px;
-    text-decoration: none; color: var(--white);
-    overflow: hidden;
-  }
-  .contact-card::before {
-    content: ''; position: absolute;
-    left: 0; top: 0; bottom: 0; width: 3px;
-    background: linear-gradient(180deg, var(--red), var(--orange));
-  }
-  .contact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 50px -20px rgba(232,25,26,0.4);
-  }
-  .contact-icon {
-    width: 46px; height: 46px; border-radius: 12px;
-    background: var(--grad); display: flex; align-items: center;
-    justify-content: center; flex-shrink: 0;
-    box-shadow: 0 8px 20px -8px rgba(232,25,26,0.5);
-  }
-  .contact-icon svg { width: 22px; height: 22px; color: var(--white); }
-  .contact-card .lbl {
-    font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase;
-    letter-spacing: 0.12em; margin-bottom: 4px; font-weight: 500;
-  }
-  .contact-card .val { font-size: 15px; font-weight: 600; }
-
-  /* FOOTER */
-  footer {
-    background: var(--black); color: rgba(255,255,255,0.4);
-    padding: 36px 0; border-top: 1px solid rgba(255,255,255,0.06);
-    text-align: center; font-size: 13.5px;
-    position: relative; z-index: 1;
-  }
-  footer .made {
-    background: var(--grad); -webkit-background-clip: text;
-    background-clip: text; -webkit-text-fill-color: transparent;
-    font-weight: 600;
-  }
-
-  /* REVEAL (clip-path wipe) */
-  /* Sections are ALWAYS visible — no JS dependency. A pure-CSS entrance
-     plays on load with no delay; if JS (the reveal IntersectionObserver)
-     is disabled or errors at runtime, content still shows because the base
-     state is visible and the animation ends visible (fill-mode: both). */
-  .reveal {
-    opacity: 1; transform: none;
-    clip-path: none; -webkit-clip-path: none;
-    animation: revealIn .7s cubic-bezier(.2,.8,.2,1) both;
-  }
-  @keyframes revealIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: none; }
-  }
-  /* JS may still add .in; it is now a no-op (kept for safety). */
-  .reveal.in {
-    opacity: 1; transform: none;
-    clip-path: none; -webkit-clip-path: none;
-  }
-  .reveal.d1 { transition-delay: .1s; }
-  .reveal.d2 { transition-delay: .2s; }
-  .reveal.d3 { transition-delay: .3s; }
-  .reveal.d4 { transition-delay: .4s; }
-
-  /* TABLET — keep desktop nav, tighten spacing */
-  @media (max-width: 960px) and (min-width: 769px) {
-    .nav-links { gap: 24px; }
-    .vaani-inner { gap: 56px; }
-    .about-inner { gap: 56px; }
-  }
-
-  /* MOBILE — hamburger + single column */
-  @media (max-width: 768px) {
-    .nav-inner { padding: 0 20px; }
-    .nav-toggle { display: flex; }
-    .nav-links {
-      position: absolute; top: 96px; left: 0; right: 0;
-      background: rgba(0,0,0,0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      flex-direction: column;
-      padding: 0 20px; gap: 0; align-items: stretch;
-      max-height: 0; overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      transition: max-height 0.35s ease, padding 0.35s ease;
-    }
-    .nav-links.open { max-height: 420px; padding: 12px 20px 24px; }
-    .nav-links a {
-      padding: 14px 0; font-size: 16px;
-      min-height: 48px; display: flex; align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-links a:last-child { border-bottom: none; }
-    .nav-links .nav-cta {
-      justify-content: center; margin-top: 14px;
-      padding: 14px 22px;
-    }
-
-    section { padding: 80px 0; }
-    .section-head { margin-bottom: 56px; }
-
-    .hero { padding: 140px 0 70px; min-height: 100vh; min-height: 100dvh; }
-    .hero h1 { margin-bottom: 24px; }
-    .hero p.sub { margin-bottom: 36px; }
-    .hero-ctas {
-      flex-direction: column; align-items: stretch; gap: 12px;
-      max-width: 360px; margin-left: auto; margin-right: auto;
-    }
-    .btn {
-      justify-content: center; min-height: 50px;
-      padding: 14px 24px; font-size: 15px;
-    }
-    .hero-stats {
-      gap: 28px; margin-top: 56px; padding-top: 36px;
-      justify-content: space-around;
-    }
-    .stat .num { font-size: 34px; }
-    .stat .label { font-size: 10.5px; }
-
-    .services-grid { grid-template-columns: 1fr; gap: 14px; }
-    .service-card { padding: 28px; }
-
-    .vaani-inner { grid-template-columns: 1fr; gap: 48px; }
-    .phone { max-width: 320px; width: 100%; }
-
-    .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .client-card { padding: 22px 18px 22px 22px; }
-
-    .about-inner { grid-template-columns: 1fr; gap: 40px; }
-    .about-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .about-stat { padding: 26px 22px; }
-    .about-stat .num { font-size: 38px; }
-
-    .contact h2 { margin-bottom: 18px; }
-    .contact p.sub { margin-bottom: 40px; font-size: 16px; }
-    .contact-secondary { margin-bottom: 48px; }
-    .contact-cta { padding: 18px 26px; font-size: 16px; min-height: 56px; }
-    .contact-links {
-      flex-direction: column; align-items: stretch; gap: 12px;
-      max-width: 420px; margin: 0 auto;
-    }
-    .contact-card { min-width: 100%; padding: 20px 22px; min-height: 44px; }
-
-    .container { padding: 0 20px; }
-  }
-
-  /* SMALL MOBILE */
-  @media (max-width: 480px) {
-    .container { padding: 0 16px; }
-    .clients-grid { grid-template-columns: 1fr; }
-    section { padding: 64px 0; }
-    .hero { padding: 130px 0 56px; }
-    .hero-stats { gap: 20px; }
-    .stat .num { font-size: 28px; }
-    .stat .label { font-size: 10px; letter-spacing: 0.08em; }
-    .about-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .about-stat { padding: 22px 18px; }
-    .about-stat .num { font-size: 34px; }
-    .service-card { padding: 24px; }
-    .service-card h3 { font-size: 21px; }
-    .section-head { margin-bottom: 48px; }
-    .section-head p { font-size: 15.5px; }
-  }
-
-  /* Disable cursor on any touch device or non-fine pointer */
-  @media (hover: none), (pointer: coarse) {
-    .cursor-glow, .cursor-dot { display: none !important; }
-    body, a, button { cursor: auto !important; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-    .marquee-track { animation: none; }
-    .reveal { opacity: 1; transform: none; clip-path: none; -webkit-clip-path: none; }
-  }
+  /* contact + footer */
+  .contact { background: var(--paper-2); }
+  footer { padding: 36px 0 48px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+  footer .row { display: flex; flex-wrap: wrap; gap: 18px 28px; justify-content: space-between; }
+  footer a { text-decoration: none; }
+  footer ul { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="noise"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
-<div class="cursor-dot" id="cursorDot"></div>
-
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo" data-hover>
-      <img src="leogo_logo.png" alt="Leogo Designs" />
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#services" data-hover>Services</a>
-      <a href="#vaani" data-hover>Vaani AI</a>
-      <a href="work/index.html" data-hover>Work</a>
-      <a href="#clients" data-hover>Clients</a>
-      <a href="#about" data-hover>About</a>
-      <a href="https://wa.me/919272445612?text=Hi%20Leogo%20Designs%2C%20I%27d%20like%20to%20discuss%20a%20project" class="nav-cta" target="_blank" rel="noopener" data-hover>Let's Talk</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="mesh">
-    <div class="mesh-blob b1"></div>
-    <div class="mesh-blob b2"></div>
-    <div class="mesh-blob b3"></div>
-  </div>
-  <div class="grid-overlay"></div>
-  <div class="particles" id="particles"></div>
-  <div class="container hero-inner">
-    <div class="hero-eyebrow">Design + Tech Agency · Satara & Pune</div>
-    <h1>We Build Brands<br><span style="white-space: nowrap;">That <span class="italic">Mean Business</span></span></h1>
-    <div class="hero-bar"></div>
-    <p class="sub">From logos and Shopify storefronts to AI sales bots — we craft brand identities and the tech that scales them. Six years in. 30+ brands shipped.</p>
-    <div class="hero-ctas">
-      <a href="https://wa.me/919272445612?text=Hi%20Leogo%20Designs%2C%20I%27d%20like%20to%20discuss%20a%20project" class="btn btn-primary magnetic" target="_blank" rel="noopener" data-hover>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Chat on WhatsApp
-      </a>
-      <a href="#services" class="btn btn-ghost magnetic" data-hover>See Our Work</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="num" data-target="6" data-suffix="+">0+</div><div class="label">Years</div></div>
-      <div class="stat"><div class="num" data-target="30" data-suffix="+">0+</div><div class="label">Brands</div></div>
-      <div class="stat"><div class="num" data-target="2" data-suffix="">0</div><div class="label">Cities</div></div>
-      <div class="stat"><div class="num" data-target="3" data-suffix="">0</div><div class="label">In-house products</div></div>
-    </div>
+<header>
+  <div class="wrap bar">
+    <a href="#top" aria-label="Leogo Designs home"><img src="leogo_final_logo_11-01.png" alt="Leogo Designs" width="120" height="30"></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#stack">The stack</a></li>
+        <li><a href="#ikaa">Ikaa</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="work/index.html">Work</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
   </div>
 </header>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag">What we do</span>
-      <h2>Services that <span class="grad">move the needle</span></h2>
-      <p>Brand-first thinking. Tech that ships. Pricing that doesn't surprise you.</p>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Leogo Designs · Satara &amp; Pune</p>
+        <h1>Brands, and the <em>systems</em> that sell them.</h1>
+        <p class="lede">We are a design studio that builds brands, runs their Instagram, and makes the software they sell with. Our own jewellery brand, Ikaa, left Shopify and runs on it today.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
+          <a class="btn btn-ghost" href="#stack">See the stack</a>
+        </div>
+      </div>
+      <figure>
+        <video src="assets/stack/ikaa-order.mp4" poster="assets/stack/ikaa-order-poster.jpg" controls muted playsinline preload="metadata" width="1080" height="1350"></video>
+        <figcaption class="note">A real Ikaa order, 26 Sept 2026: website, checkout, stock and books in two minutes. Customer details hidden.</figcaption>
+      </figure>
     </div>
-    <div class="services-grid">
-      <div class="service-card tilt reveal" style="cursor:pointer;" onclick="window.location='work/index.html'">
-        <span class="service-num">01</span>
-        <div class="service-card-inner">
-          <h3>Logo & Branding</h3>
-          <p>Identity systems that hold up — logo, type, color, the full brand book. Built to scale across packaging, social, and product.</p>
-          <div class="service-price">
-            <span class="amt">₹4,000</span>
-            <span class="unit">starting</span>
-          </div>
-        </div>
-      </div>
+  </section>
 
-      <div class="service-card tilt reveal d1">
-        <span class="service-num">02</span>
-        <div class="service-card-inner">
-          <h3>Social Media Management</h3>
-          <p>Strategy, content, design, posting, growth — handled end-to-end. We've taken brands from 0 to 150k followers.</p>
-          <div class="service-price">
-            <span class="amt">₹12,000</span> <span class="price-note">/ month · starting</span>
-          </div>
+  <section id="studio">
+    <div class="wrap">
+      <p class="kicker">Two halves of Leogo</p>
+      <h2>A studio for your brand. Software for your sales.</h2>
+      <p class="lede" style="margin-top:16px">Take one half or both. Most founders start with the brand and grow into the stack.</p>
+      <div class="halves">
+        <div class="half">
+          <h3>Studio</h3>
+          <p class="note">Six years, 30+ brands.</p>
+          <ul class="list">
+            <li><span>Logo and branding</span><span class="price">from ₹4,000</span></li>
+            <li><span>Brand kit</span><span class="price">₹2,000</span></li>
+            <li><span>Brand book</span><span class="price">₹8,000</span></li>
+            <li><span>Social media management (Satara &amp; Pune)</span><span class="price">from ₹12,000/mo</span></li>
+            <li><span>Store design and build on Angan</span><span class="price">from ₹18,000</span></li>
+          </ul>
+        </div>
+        <div class="half">
+          <h3>The stack</h3>
+          <p class="note">Five tools, built for Indian D2C. Use one, or all five.</p>
+          <ul class="list">
+            <li><span>Angan · storefront</span><span class="price">from ₹1,500/mo</span></li>
+            <li><span>Setu · checkout &amp; payments</span><span class="price">from ₹2,999/mo</span></li>
+            <li><span>Dor · stock sync</span><span class="price">from ₹599/mo</span></li>
+            <li><span>Hisaab Kitab · books &amp; GST</span><span class="price">₹799/mo</span></li>
+            <li><span>Vaani · WhatsApp &amp; Instagram sales</span><span class="price">from ₹1,999/mo</span></li>
+          </ul>
         </div>
       </div>
-
-      <div class="service-card tilt reveal d2">
-        <span class="service-num">03</span>
-        <div class="service-card-inner">
-          <h3>Shopify Website</h3>
-          <p>Conversion-tuned Shopify storefronts. Custom theme, product photography integration, payments, and launch-ready in weeks.</p>
-          <div class="service-price">
-            <span class="amt">₹18k – ₹42k</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card tilt reveal d3">
-        <span class="service-num">04</span>
-        <div class="service-card-inner">
-          <h3>Vaani AI Sales Bot</h3>
-          <p>An AI sales rep that replies on WhatsApp and Instagram — recommends products, handles objections, books orders. 24/7.</p>
-          <div class="service-price custom">
-            <span class="amt">Custom pricing →</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card tilt reveal d4" style="cursor:pointer;" onclick="window.open('https://dor-app-production.up.railway.app','_blank','noopener')">
-        <span class="service-num">05</span>
-        <div class="service-card-inner">
-          <h3><a href="https://dor-app-production.up.railway.app" target="_blank" rel="noopener" data-hover>Dor — Inventory Sync</a></h3>
-          <p>Connect your store to Google Sheets. Pull, edit, push. Sync inventory and pricing between Shopify and a spreadsheet — bulk-edit stock and prices in Sheets, then push changes live to your store in one click.</p>
-          <div class="service-price custom">
-            <span class="amt">Learn more →</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card tilt reveal d4" style="cursor:pointer;" onclick="window.open('https://setu.leogo.in','_blank','noopener')">
-        <span class="service-num">06</span>
-        <div class="service-card-inner">
-          <h3><a href="https://setu.leogo.in" target="_blank" rel="noopener" data-hover>Setu — Smart Checkout</a></h3>
-          <p>A one-page checkout built for Indian brands. Phone-OTP login, instant address autofill, and UPI / COD / card payments via Razorpay — with saved addresses that follow shoppers across every store on Setu.</p>
-          <div class="service-price custom">
-            <span class="amt">Learn more →</span>
-          </div>
-        </div>
-      </div>
+      <p class="note" style="margin-top:14px">All prices exclude 18% GST.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VAANI -->
-<section class="vaani" id="vaani">
-  <div class="bg-orbs"></div>
-  <div class="container">
-    <div class="vaani-inner">
-      <div class="reveal">
-        <span class="vaani-eyebrow">Our flagship product</span>
-        <h2>Meet <span class="italic grad">Vaani</span></h2>
-        <p class="vaani-sub">The AI rep that never sleeps.</p>
-        <div class="vaani-stats">
-          <div class="vaani-stat">
-            <div class="num">24/7</div>
-            <div class="label">Always On</div>
-          </div>
-          <div class="vaani-stat">
-            <div class="num">2</div>
-            <div class="label">Channels</div>
-          </div>
-          <div class="vaani-stat">
-            <div class="num">0</div>
-            <div class="label">Missed Leads</div>
-          </div>
-        </div>
-        <ul class="vaani-features">
-          <li>Replies instantly on WhatsApp + Instagram DMs</li>
-          <li>Recommends products with images, prices, and links</li>
-          <li>Follows up with abandoned browsers automatically</li>
-          <li>Hands off to humans when it really matters</li>
-        </ul>
-        <a href="https://wa.me/919272445612?text=Hi%2C%20I%27d%20like%20a%20Vaani%20demo" class="btn btn-primary magnetic" target="_blank" rel="noopener" data-hover>
-          See Vaani in action
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+  <section id="stack">
+    <div class="wrap">
+      <p class="kicker">The stack</p>
+      <h2>Everything a small brand sells with, in one place.</h2>
+      <p class="lede" style="margin-top:16px">Each tool works on its own. Together, a sale on your website, on WhatsApp or on Instagram lands in the same stock count and the same books.</p>
 
-      <div class="reveal d2">
-        <div class="phone">
-          <div class="phone-header">
-            <div class="phone-avatar">
-              <img src="https://ikaajewellery.com/cdn/shop/t/17/assets/ikaa-logo.png?v=17346795494336890121780037052" alt="Ikaa" loading="lazy"/>
-            </div>
-            <div class="phone-meta">
-              <div class="phone-name">Jhilmil · Ikaa</div>
-              <div class="phone-presence">● Online</div>
-            </div>
-          </div>
-          <div class="phone-chat">
-            <div class="product-card">
-              <div class="product-card-row">
-                <div class="product-tile">
-                  <img class="swatch" src="https://cdn.shopify.com/s/files/1/0888/7628/6231/files/2_401aed9c-d4c1-413d-b454-ed8a8e1a3aa6.jpg?v=1741070768&width=200" alt="Arzoo Ring" loading="lazy"/>
-                  <div class="name">Arzoo Ring</div>
-                  <div class="price">Rs. 540</div>
-                </div>
-                <div class="product-tile">
-                  <img class="swatch" src="https://cdn.shopify.com/s/files/1/0888/7628/6231/files/2_1bfc1ddb-14b8-435b-96f4-e73db59603b6.jpg?v=1761985583&width=200" alt="Meghini Chandbali Earrings" loading="lazy"/>
-                  <div class="name">Meghini Chandbali</div>
-                  <div class="price">Rs. 1,200</div>
-                </div>
-                <div class="product-tile">
-                  <img class="swatch" src="https://cdn.shopify.com/s/files/1/0888/7628/6231/files/2_aad150de-bd60-4143-82b7-b2efd81e2daf.jpg?v=1740992829&width=200" alt="Indriya Necklace Set" loading="lazy"/>
-                  <div class="name">Indriya Necklace</div>
-                  <div class="price">Rs. 1,900</div>
-                </div>
-              </div>
-              <div class="time">11:43 PM</div>
-            </div>
-
-            <div class="bubble us">
-              2
-              <span class="time">11:44 PM</span>
-            </div>
-
-            <div class="bubble them">
-              Meghini Chandbali Earrings · Rs. 1,200 — Traditional chandbali design with kundan stones. Lightweight gold-plated brass, festive-ready. Want to add this to your shortlist?
-              <div class="bubble-ctas">
-                <div class="bubble-cta">Add to shortlist</div>
-                <div class="bubble-cta">See more like this</div>
-              </div>
-              <span class="time">11:44 PM</span>
-            </div>
-
-            <div class="bubble us">
-              Add to shortlist
-              <span class="time">11:44 PM</span>
-            </div>
-
-            <div class="bubble them">
-              Added ✨ Want me to walk you through checkout?
-              <span class="time">11:45 PM</span>
-            </div>
-
-            <div class="bubble us">
-              Yes please
-              <span class="time">11:45 PM</span>
-            </div>
-
-            <div class="bubble them">
-              Here's your secure checkout link: ikaa.in/checkout — Payment confirms your order instantly.
-              <span class="time">11:45 PM</span>
-            </div>
-
-            <div class="bubble us">
-              Done ✓
-              <span class="time">11:46 PM</span>
-            </div>
-
-            <div class="bubble them">
-              Payment confirmed ✨ Order #IK2847 is on its way. Tracking link will follow once shipped. Thank you for choosing Ikaa 🌸
-              <span class="time">11:46 PM</span>
-            </div>
-          </div>
-          <div class="phone-input">
-            <div class="phone-input-box">Type a message</div>
-            <div class="phone-input-send">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CLIENTS -->
-<section class="clients" id="clients">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-tag">Brands we've built</span>
-      <h2>Trusted by founders <span class="grad">who ship</span></h2>
-      <p>From single-store retailers to multi-city chains — we've shaped the brand work behind dozens of growing businesses.</p>
-    </div>
-
-    <div class="clients-block reveal">
-      <span class="clients-label current">Currently working with</span>
-      <div class="marquee-wrap">
-        <div class="marquee">
-          <div class="marquee-track">
-            <div class="marquee-card"><div class="name">Rajathee Sarees</div><div class="note">Sarees · Retail</div></div>
-            <div class="marquee-card"><div class="name">Bhagare Misal</div><div class="note">F&B · Heritage brand</div></div>
-            <div class="marquee-card"><div class="name">The Woof Parade</div><div class="note">Pet · Dog Apparel</div></div>
-            <div class="marquee-card"><div class="name">Dynam EV</div><div class="note">Mobility · EV</div></div>
-            <div class="marquee-card"><div class="name">Awesome Beauty</div><div class="note">Beauty · Salon</div></div>
-            <div class="marquee-card"><div class="name">Yogita MUA</div><div class="note">Beauty · Personal brand</div></div>
-            <!-- duplicate for seamless loop -->
-            <div class="marquee-card"><div class="name">Rajathee Sarees</div><div class="note">Sarees · Retail</div></div>
-            <div class="marquee-card"><div class="name">Bhagare Misal</div><div class="note">F&B · Heritage brand</div></div>
-            <div class="marquee-card"><div class="name">The Woof Parade</div><div class="note">Pet · Dog Apparel</div></div>
-            <div class="marquee-card"><div class="name">Dynam EV</div><div class="note">Mobility · EV</div></div>
-            <div class="marquee-card"><div class="name">Awesome Beauty</div><div class="note">Beauty · Salon</div></div>
-            <div class="marquee-card"><div class="name">Yogita MUA</div><div class="note">Beauty · Personal brand</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="clients-block reveal">
-      <button class="past-toggle" data-past-toggle aria-expanded="false" type="button">
-        <span class="past-toggle-show">+ and many more</span>
-        <span class="past-toggle-hide">− hide past work</span>
-      </button>
-      <div class="past-grid-wrap" data-past-grid>
-        <div class="clients-grid">
-          <div class="client-card">
-            <div class="name">Home Linen Studio</div>
-            <div class="note">Home · Lifestyle</div>
-            <span class="badge">0 → 150k followers in 1.5 yrs</span>
-          </div>
-          <div class="client-card"><div class="name">Cocorico</div><div class="note">F&B · Restaurant</div></div>
-          <div class="client-card"><div class="name">Dakkhan</div><div class="note">F&B · Restaurant</div></div>
-          <div class="client-card"><div class="name">Burger Mine</div><div class="note">F&B · Restaurant</div></div>
-          <div class="client-card"><div class="name">Clay 7</div><div class="note">F&B · Café</div></div>
-          <div class="client-card"><div class="name">Vinay Interior Studio</div><div class="note">Interiors</div></div>
-          <div class="client-card"><div class="name">Rivazz</div><div class="note">Jewellery</div></div>
-          <div class="client-card"><div class="name">Riivaa</div><div class="note">Jewellery</div></div>
-          <div class="client-card"><div class="name">Hotel Radhika Palace</div><div class="note">Hospitality</div></div>
-          <div class="client-card"><div class="name">Tija Handmades</div><div class="note">Handmade · Soaps</div></div>
-          <div class="client-card"><div class="name">Kahani – Kids Library</div><div class="note">Education · Kids Library</div></div>
-          <div class="client-card"><div class="name">Mizufert International</div><div class="note">Agro · Export</div></div>
-          <div class="client-card"><div class="name">IDRC</div><div class="note">F&B · South Indian Café</div></div>
-          <div class="client-card"><div class="name">Kora Fine Art Jewellery</div><div class="note">Jewellery</div></div>
-          <div class="client-card"><div class="name">7 Star Cinema</div><div class="note">Entertainment</div></div>
-          <div class="client-card"><div class="name">Satara Food Truck</div><div class="note">F&B · Food Truck</div></div>
-          <div class="client-card"><div class="name">De Akaar</div><div class="note">Ceramics</div></div>
-          <div class="client-card"><div class="name">Cozy Haus</div><div class="note">Home Decor · German</div></div>
-          <div class="client-card"><div class="name">Fires</div><div class="note">F&B</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-inner">
-      <div class="about-text reveal">
-        <span class="section-tag">Who we are</span>
-        <h2>Six years of building brands <span class="grad">that mean business.</span></h2>
-        <p>Leogo Designs started in Satara and grew into Pune. We're a tight team of designers and developers who care as much about a launch number as we do about kerning.</p>
-        <p>We work across branding, social, websites, and now AI — because brands today need both story and system to win. Most of our clients stay with us for years, and most of our work comes from their referrals.</p>
-      </div>
-      <div class="about-stats reveal d1">
-        <div class="about-stat"><div class="num" data-target="6" data-suffix="+">0+</div><div class="lbl">Years in business</div></div>
-        <div class="about-stat"><div class="num" data-target="2" data-suffix="">0</div><div class="lbl">Cities · Satara & Pune</div></div>
-        <div class="about-stat"><div class="num" data-target="30" data-suffix="+">0+</div><div class="lbl">Brands shipped</div></div>
-        <div class="about-stat"><div class="num" data-target="3" data-suffix="">0</div><div class="lbl">In-house products</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="bg-orbs"></div>
-  <div class="container contact-inner">
-    <div class="reveal">
-      <h2>Let's build something<br/><span class="grad">that means business.</span></h2>
-      <p class="sub">Drop us a line — we usually reply within a few hours. Tell us about the brand, the goal, and we'll take it from there.</p>
-    </div>
-
-    <div class="reveal d1">
-      <div class="contact-cta-wrap">
-        <a href="https://wa.me/919272445612?text=Hi%20Leogo%20Designs%2C%20I%27d%20like%20to%20discuss%20a%20project" class="contact-cta magnetic" target="_blank" rel="noopener" data-hover>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
-          Start a project on WhatsApp
-        </a>
-      </div>
-      <br/>
-      <a href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20can%20I%20book%20a%20free%2015-min%20call%3F" class="contact-secondary" target="_blank" rel="noopener" data-hover>Or book a free 15-min call →</a>
-    </div>
-
-    <div class="contact-links reveal d2">
-      <a href="mailto:leogodesigns@gmail.com" class="contact-card" data-hover>
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-        </div>
+      <article class="product" id="angan">
         <div>
-          <div class="lbl">Email</div>
-          <div class="val">leogodesigns@gmail.com</div>
+          <div class="name">Angan</div>
+          <div class="what">Storefront platform</div>
+          <p>Your own online store, designed by our studio, with live stock and prices. The platform Ikaa moved to from Shopify. Every Angan store takes payments through Setu.</p>
+          <p class="from">Store build <span class="price">from ₹18,000</span>, then <span class="price">₹1,500/mo</span> plus a small share of sales.</p>
+          <details>
+            <summary>See all Angan plans</summary>
+            <div class="tbl-wrap"><table>
+              <tr><th>Store build (one time)</th><th class="num">Price</th><th>What we build</th></tr>
+              <tr><td>Starter</td><td class="num">₹18,000</td><td>Up to 50 products, Angan theme in your brand colours, 1 round of revisions</td></tr>
+              <tr><td>Growth (most brands)</td><td class="num">₹25,000</td><td>Up to 200 products, custom homepage sections and brand moods, move from Shopify, Meta pixel and Conversions API, SEO setup, 2 rounds of revisions</td></tr>
+              <tr><td>Signature</td><td class="num">₹48,000</td><td>Unlimited products, fully custom design, full move with old links redirected, analytics, 3 rounds of revisions, priority support</td></tr>
+            </table></div>
+            <div class="tbl-wrap"><table>
+              <tr><th>Running the store (every plan)</th><th class="num">Monthly</th></tr>
+              <tr><td>Hosting and support</td><td class="num">₹1,500</td></tr>
+              <tr><td>On the first ₹3 lakh of orders each month</td><td class="num">1.5%</td></tr>
+              <tr><td>On orders between ₹3 lakh and ₹10 lakh</td><td class="num">1%</td></tr>
+              <tr><td>On orders above ₹10 lakh</td><td class="num">0.5%</td></tr>
+            </table></div>
+            <div class="terms">
+              <p><b>Live in 21 days, or your build fee back.</b> The 21 days start once the contract is signed and we have your product list, photos, logo, policies and domain access. Delays in sharing these pause the clock.</p>
+              <p>The share is on the total value of orders placed through your store each month, as recorded at checkout. Fair use applies to very high traffic.</p>
+            </div>
+          </details>
         </div>
-      </a>
+        <figure><img src="assets/stack/angan-ikaa-store.jpg" alt="Ikaa Jewellery's live Angan store, showing the Lamplight mood and a product page" width="1377" height="868" loading="lazy"></figure>
+      </article>
 
-      <a href="https://instagram.com/leogodesigns" class="contact-card" target="_blank" rel="noopener" data-hover>
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-        </div>
+      <article class="product" id="setu">
         <div>
-          <div class="lbl">Instagram</div>
-          <div class="val">@leogodesigns</div>
+          <div class="name">Setu</div>
+          <div class="what">Checkout &amp; payments</div>
+          <p>A checkout built for India: WhatsApp OTP, pincode autofill, coupons, UPI, cards and partial COD through PayU. It reminds shoppers who leave their cart and alerts you on every order.</p>
+          <p class="from"><span class="price">from ₹2,999/mo</span> plus a one-time setup.</p>
+          <details>
+            <summary>See all Setu plans</summary>
+            <div class="tbl-wrap"><table>
+              <tr><th>Plan</th><th class="num">Monthly</th><th class="num">Setup</th><th>Includes</th></tr>
+              <tr><td>Starter</td><td class="num">₹2,999</td><td class="num">₹3,000</td><td>Smart checkout, UPI, cards and partial COD, cart reminders, order alerts, dashboard. Up to 10,000 sessions</td></tr>
+              <tr><td>Growth (most brands)</td><td class="num">₹5,999</td><td class="num">₹5,000</td><td>Starter, plus COD risk checks, buying-intent scoring, upsells, AI copilot, Meta, GA4 and Clarity. Up to 50,000 sessions</td></tr>
+              <tr><td>Scale</td><td class="num">₹14,999</td><td class="num">₹7,000</td><td>Growth, plus Shiprocket, per-product rules and an account manager. 5 lakh+ sessions</td></tr>
+            </table></div>
+            <div class="terms"><p>Setup connects your own WhatsApp Business number. Meta bills you directly for OTPs and order messages.</p></div>
+          </details>
         </div>
-      </a>
+        <figure><img src="assets/stack/crop-setu.jpg" alt="Setu checkout record for a real Ikaa order: paid ₹1,330 via PayU at 12:47 PM" width="500" height="350" loading="lazy"></figure>
+      </article>
 
-      <a href="https://wa.me/919272445612" class="contact-card" target="_blank" rel="noopener" data-hover>
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-        </div>
+      <article class="product" id="dor">
         <div>
-          <div class="lbl">WhatsApp</div>
-          <div class="val">+91 92724 45612</div>
+          <div class="name">Dor</div>
+          <div class="what">Stock sync</div>
+          <p>One stock count for your website, WhatsApp and Instagram. Sell a piece anywhere and it is updated everywhere, so the last piece never sells twice. Manage stock and prices from a Google Sheet if you like.</p>
+          <p class="from"><span class="price">₹599/mo</span> plus ₹1,500 setup.</p>
+          <details>
+            <summary>See Dor pricing</summary>
+            <div class="tbl-wrap"><table>
+              <tr><th></th><th class="num">Setup</th><th class="num">Monthly</th></tr>
+              <tr><td>Dor</td><td class="num">₹1,500</td><td class="num">₹599</td></tr>
+              <tr><td>With Vaani, for brands without a website</td><td class="num">₹1,500</td><td class="num">₹0</td></tr>
+            </table></div>
+          </details>
         </div>
-      </a>
+        <figure><img src="assets/stack/crop-dor.jpg" alt="Dor updating stock on the website, WhatsApp and Instagram after a sale" width="1000" height="250" loading="lazy"></figure>
+      </article>
+
+      <article class="product" id="hisaab-kitab">
+        <div>
+          <div class="name">Hisaab Kitab</div>
+          <div class="what">Books &amp; GST</div>
+          <p>Every sale becomes a GST invoice and lands in your books on its own, next to your expenses. Each month you get your GST return file, ready to upload. We set it up for you, so your CA only checks and files.</p>
+          <p class="from"><span class="price">₹799/mo</span> plus ₹3,000 setup.</p>
+          <details>
+            <summary>What Hisaab Kitab covers</summary>
+            <div class="tbl-wrap"><table>
+              <tr><th>Included</th></tr>
+              <tr><td>GST invoices with correct numbering, for every order</td></tr>
+              <tr><td>GSTR-1 and GSTR-3B files ready to upload, with input tax credit and reverse charge handled</td></tr>
+              <tr><td>Income, expenses and profit by month</td></tr>
+              <tr><td>Stock and orders, with payment gateway fees matched to each sale</td></tr>
+            </table></div>
+            <div class="terms"><p>Setup ₹3,000 covers your GST details, invoice numbering, opening stock and payment gateway connection.</p></div>
+          </details>
+        </div>
+        <figure><img src="assets/stack/crop-hk.jpg" alt="Hisaab Kitab entry for a real Ikaa order: income booked, GST invoice created, GST return file updated" width="500" height="350" loading="lazy"></figure>
+      </article>
+
+      <article class="product" id="vaani">
+        <div>
+          <div class="name">Vaani</div>
+          <div class="what">WhatsApp &amp; Instagram sales</div>
+          <p>Answers DMs and comments on Instagram and chats on WhatsApp, day and night. Shows what is in stock and takes the order. Since June 2026 it has answered 10,445 Instagram DMs and replied to 4,535 comments for 8 brands.</p>
+          <p class="from"><span class="price">from ₹1,999/mo</span> plus setup.</p>
+          <details>
+            <summary>See Vaani plans</summary>
+            <div class="tbl-wrap"><table>
+              <tr><th>Plan</th><th class="num">Monthly</th><th class="num">Setup</th></tr>
+              <tr><td>Instagram</td><td class="num">₹1,999</td><td class="num">₹4,000</td></tr>
+              <tr><td>WhatsApp</td><td class="num">₹2,999</td><td class="num">₹4,000</td></tr>
+              <tr><td>WhatsApp and Instagram</td><td class="num">₹3,499</td><td class="num">₹6,500</td></tr>
+            </table></div>
+            <div class="terms">
+              <p>Founding rates for our first 15 brands, with 1,000 conversations a month. Meta's own message charges are paid by your brand. No website? We connect your catalogue through Dor for ₹1,500, with no monthly fee.</p>
+              <p>Full plans, postpaid and add-ons on <a href="https://www.vaani.website/pricing.html">vaani.website</a>.</p>
+            </div>
+          </details>
+        </div>
+        <figure><img src="assets/stack/order-20.5.jpg" alt="The five Leogo tools connected around Ikaa: Angan, Setu, Vaani, Dor and Hisaab Kitab" width="1080" height="1350" loading="lazy"></figure>
+      </article>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="proof" id="ikaa">
+    <div class="wrap">
+      <p class="kicker">Proof</p>
+      <h2>We moved Ikaa off Shopify.</h2>
+      <p class="lede" style="margin-top:16px">Ikaa is our own jewellery brand. On 26 Sept 2026 its first order on the new stack came in: two pairs of earrings, gift wrapped, ₹1,330. Here is what happened in the next two minutes.</p>
+      <div class="steps">
+        <div class="step"><img src="assets/stack/crop-cart.jpg" alt="Ikaa cart with two earrings and gift wrap, total ₹1,330" width="1000" height="470" loading="lazy"><h3>12:45 · Angan</h3><p>The shopper fills the bag on ikaajewellery.com and taps pay.</p></div>
+        <div class="step"><img src="assets/stack/crop-setu.jpg" alt="Setu showing payment received via PayU" width="500" height="350" loading="lazy"><h3>12:47 · Setu</h3><p>Payment through PayU. Setu passes the order to Dor and the books.</p></div>
+        <div class="step"><img src="assets/stack/crop-hk.jpg" alt="Hisaab Kitab booking income and creating the GST invoice" width="500" height="350" loading="lazy"><h3>12:47 · Hisaab Kitab</h3><p>Income booked, GST invoice created, the month's GST return file updated.</p></div>
+        <div class="step"><img src="assets/stack/crop-dor.jpg" alt="Dor updating stock on every channel" width="1000" height="250" loading="lazy"><h3>12:47 · Dor</h3><p>Two pieces out of stock on the website, WhatsApp and Instagram at once.</p></div>
+      </div>
+      <div class="figures">
+        <div><b>8</b><span>brands on Vaani since June 2026</span></div>
+        <div><b>141+</b><span>orders taken in chat</span></div>
+        <div><b>10,445</b><span>Instagram DMs answered</span></div>
+        <div><b>4,535</b><span>comments replied</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <p class="kicker">Pricing</p>
+      <h2>Bundles, and how they compare.</h2>
+      <p class="lede" style="margin-top:16px">Each tool is sold on its own, with every plan listed above. Bundles save 15 to 22% on the monthly fee and the setup.</p>
+      <div class="bundles tbl-wrap">
+        <table>
+          <tr><th>Bundle</th><th>Includes</th><th class="num">Monthly</th><th class="num">Setup</th></tr>
+          <tr><td>Run the shop</td><td>Setu, Dor, Hisaab Kitab</td><td class="num">₹3,599 <span class="note">(₹4,397 separately)</span></td><td class="num">₹6,000</td></tr>
+          <tr><td>Sell and get paid</td><td>Vaani (WhatsApp and Instagram), Setu</td><td class="num">₹5,499 <span class="note">(₹6,498)</span></td><td class="num">₹8,000</td></tr>
+          <tr><td>Full stack</td><td>Angan, Setu, Dor, Hisaab Kitab, Vaani</td><td class="num">₹7,499 + Angan share <span class="note">(₹9,396)</span></td><td class="num">₹25,000</td></tr>
+        </table>
+      </div>
+      <p class="note" style="margin-top:10px">Bundles use Starter plans. Higher plans are the bundle price plus the difference. Pay yearly and get 2 months free. All prices exclude 18% GST.</p>
+
+      <h3 style="margin-top:56px">Full stack vs Shopify and its apps</h3>
+      <p class="note" style="margin-top:6px">What a brand pays each month, assuming half its orders are COD.</p>
+      <div class="compare tbl-wrap">
+        <table>
+          <tr><th>Online orders a month</th><th class="num">Shopify + apps</th><th class="num">Leogo full stack</th><th class="num">You save</th></tr>
+          <tr><td>₹1 lakh</td><td class="num">₹14,794</td><td class="num">₹8,999</td><td class="num">39%</td></tr>
+          <tr><td>₹3 lakh</td><td class="num">₹20,043</td><td class="num">₹11,999</td><td class="num">40%</td></tr>
+          <tr><td>₹5 lakh</td><td class="num">₹24,543</td><td class="num">₹13,999</td><td class="num">43%</td></tr>
+          <tr><td>₹10 lakh</td><td class="num">₹35,793</td><td class="num">₹18,999</td><td class="num">47%</td></tr>
+        </table>
+      </div>
+      <p class="note" style="margin-top:10px">Shopify + apps: Shopify Basic ₹1,994 with its 2% fee on online payments, a one-click checkout at ₹3,000 plus about 2.5% of prepaid orders, a WhatsApp and Instagram bot with AI at ₹6,700, a stock sync app at about ₹850 and accounting software. Based on each company's published prices, 1 Oct 2026. Payment gateway fees apply to both and are left out.</p>
+    </div>
+  </section>
+
+  <section id="clients">
+    <div class="wrap">
+      <p class="kicker">Clients</p>
+      <h2>Founders we work with.</h2>
+      <ul class="clients-list">
+        <li><b>Rajathee Sarees</b><span>Sarees · retail</span></li>
+        <li><b>Bhagare Misal</b><span>Food · heritage brand</span></li>
+        <li><b>The Woof Parade</b><span>Dog apparel</span></li>
+        <li><b>Dynam EV</b><span>Electric vehicles</span></li>
+        <li><b>Maan Textiles</b><span>Textiles · Vaani</span></li>
+        <li><b>SneakCulture</b><span>Sneakers · Vaani</span></li>
+        <li><b>Yogita MUA</b><span>Beauty · personal brand</span></li>
+        <li><b>Home Linen Studio</b><span>0 to 150k Instagram followers in 18 months</span></li>
+      </ul>
+      <div class="btns"><a class="btn btn-ghost" href="work/index.html">See our work</a></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="kicker">About</p>
+        <h2>Six years of brands. One of them our own.</h2>
+      </div>
+      <div>
+        <p>Leogo Designs is run by Shweta Phansalkar from Satara and Pune. We started with logos and Instagram, and learnt how Indian shoppers really buy by growing Shweta's food page, Shweta Eats, to 26,000 followers: in DMs, not on websites.</p>
+        <p style="margin-top:14px">When our own jewellery brand, Ikaa, outgrew Shopify and a pile of apps, we built the tools it needed. Those tools are now the stack. Studio work is remote across India, except social media management, which we do for brands in Satara and Pune.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Tell us about your brand.</h2>
+      <p class="lede" style="margin-top:14px">A quick chat on WhatsApp is the fastest way to start. We reply within a working day.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://wa.me/919272445612?text=Hi%20Leogo%2C%20I%27d%20like%20to%20talk%20about%20my%20brand">Chat on WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:leogodesigns@gmail.com">leogodesigns@gmail.com</a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <div class="container">
-    © <span id="year">2026</span> Leogo Designs · Made with <span class="made">brand + tech</span> in Satara & Pune.
+  <div class="wrap row">
+    <span>© 2026 Leogo Designs · Satara &amp; Pune</span>
+    <ul>
+      <li><a href="https://instagram.com/leogodesigns">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/leogo-designs/">LinkedIn</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="refunds.html">Refunds</a></li>
+    </ul>
   </div>
 </footer>
-
-<script>
-  // ===== YEAR =====
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // ===== MOBILE MENU =====
-  const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    links.classList.remove('open');
-    toggle.classList.remove('open');
-  }));
-
-  // ===== NAV SCROLL =====
-  const nav = document.getElementById('nav');
-  const onScroll = () => {
-    if (window.scrollY > 16) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // ===== SECTION REVEAL (clip-path wipe) =====
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // ===== PARTICLES =====
-  const particlesEl = document.getElementById('particles');
-  const PARTICLE_COUNT = 28;
-  for (let i = 0; i < PARTICLE_COUNT; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = 2 + Math.random() * 4;
-    const startX = Math.random() * 100;
-    const startY = 100 + Math.random() * 20;
-    const dx = (Math.random() - 0.5) * 200;
-    const dy = -(window.innerHeight + 200);
-    const isRed = Math.random() < 0.5;
-    const color = isRed ? 'rgba(232,25,26,0.8)' : 'rgba(245,166,35,0.8)';
-    const duration = 12 + Math.random() * 16;
-    // Negative delay = particle starts partway through its drift on page load.
-    // Spreads all 28 particles across the full animation cycle so the hero
-    // is already populated and animating at t=0.
-    const delay = -Math.random() * duration;
-    p.style.cssText = `
-      width:${size}px;height:${size}px;
-      left:${startX}%;top:${startY}%;
-      background:${color};
-      box-shadow: 0 0 ${size*3}px ${color};
-      --dx:${dx}px;--dy:${dy}px;
-      animation-duration:${duration}s;
-      animation-delay:${delay}s;
-    `;
-    particlesEl.appendChild(p);
-  }
-
-  // ===== STATS COUNTER =====
-  const animateCount = (el) => {
-    const target = parseInt(el.dataset.target, 10);
-    const suffix = el.dataset.suffix || '';
-    const duration = 1600;
-    const startTime = performance.now();
-    let lastVal = -1;
-    const step = (now) => {
-      const t = Math.min(1, (now - startTime) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      const val = Math.round(eased * target);
-      if (val !== lastVal) {
-        el.textContent = val + suffix;
-        el.classList.remove('flip');
-        void el.offsetWidth;
-        el.classList.add('flip');
-        lastVal = val;
-      }
-      if (t < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-  const statIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        animateCount(e.target);
-        statIO.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('[data-target]').forEach(el => statIO.observe(el));
-
-// ===== IKAA CHAT LOOP (drives .phone-chat reveal) =====
-  (() => {
-    const chat = document.querySelector('.phone-chat');
-    if (!chat) return;
-    const items = Array.from(chat.children);
-    // product-card, user "2", bot Meghini detail, user shortlist, bot checkout?,
-    // user yes, bot checkout link, user done, bot confirmation
-    const delays = [600, 700, 1400, 900, 1100, 800, 1200, 900, 1500];
-    const pause  = 4000;
-    const reset = () => {
-      items.forEach(el => el.classList.remove('show'));
-      chat.scrollTop = 0;
-    };
-    const wait = ms => new Promise(r => setTimeout(r, ms));
-    async function play() {
-      reset();
-      for (let i = 0; i < items.length; i++) {
-        await wait(delays[i] ?? 1000);
-        items[i].classList.add('show');
-        const t = items[i];
-        const desired = t.offsetTop + t.offsetHeight - chat.clientHeight + 16;
-        chat.scrollTo({ top: Math.max(0, desired), behavior: 'smooth' });
-      }
-      await wait(pause);
-      play();
-    }
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting && !e.target.dataset.running) {
-          e.target.dataset.running = '1';
-          play();
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    io.observe(chat);
-  })();
-
-// ===== PAST CLIENTS COLLAPSE =====
-  (() => {
-    const btn = document.querySelector('[data-past-toggle]');
-    const grid = document.querySelector('[data-past-grid]');
-    if (!btn || !grid) return;
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      grid.classList.toggle('open', !open);
-    });
-  })();
-
-// ===== CUSTOM CURSOR =====
-  const dot = document.querySelector('.cursor-dot');
-  const glow = document.querySelector('.cursor-glow');
-  if (dot && glow) {
-    let mouseX = 0, mouseY = 0;
-    let glowX = 0, glowY = 0;
-    document.addEventListener('mousemove', e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dot.style.left = mouseX + 'px';
-      dot.style.top = mouseY + 'px';
-      dot.classList.add('active');
-      glow.classList.add('active');
-    });
-    function animateGlow() {
-      glowX += (mouseX - glowX) * 0.12;
-      glowY += (mouseY - glowY) * 0.12;
-      glow.style.left = glowX + 'px';
-      glow.style.top = glowY + 'px';
-      requestAnimationFrame(animateGlow);
-    }
-    animateGlow();
-  }
-
-  // ===== MAGNETIC BUTTONS =====
-  document.querySelectorAll('.magnetic').forEach(el => {
-    let rafM;
-    el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      const cx = r.left + r.width / 2;
-      const cy = r.top + r.height / 2;
-      const tx = (e.clientX - cx) * 0.25;
-      const ty = (e.clientY - cy) * 0.35;
-      cancelAnimationFrame(rafM);
-      rafM = requestAnimationFrame(() => {
-        el.style.transform = `translate(${tx}px, ${ty}px)`;
-      });
-    });
-    el.addEventListener('mouseleave', () => {
-      cancelAnimationFrame(rafM);
-      el.style.transform = '';
-    });
-  });
-</script>
-
 </body>
 </html>
