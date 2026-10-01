@@ -65,7 +65,7 @@
   .hero h1 { font-size: clamp(48px, 8.2vw, 112px); padding-bottom: 6px; }
   .hero .side p { font-size: 19px; max-width: 36ch; }
   .hero .side .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
-  @media (min-width: 1000px) { .hero-top { grid-template-columns: 1fr 340px; align-items: end; gap: 48px; } }
+  @media (min-width: 1000px) { .hero-top { grid-template-columns: 1fr 340px; align-items: end; gap: 48px; } .hero .side { padding-bottom: 14px; } }
   .window { display: grid; grid-auto-flow: column; grid-auto-columns: 78%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 44px; padding-bottom: 6px; }
   .window figure { scroll-snap-align: start; }
   .window .frame { aspect-ratio: 4 / 3.4; overflow: hidden; background: var(--card); }
@@ -86,10 +86,13 @@
   .proofstrip { display: grid; grid-template-columns: 1.2fr 1fr; gap: 10px; margin-top: 28px; }
   .proofstrip img { width: 100%; height: 180px; object-fit: cover; background: #fff; }
   .proofstrip figcaption { grid-column: 1 / -1; font-size: 14px; color: var(--muted); }
+  .proofstrip.one { grid-template-columns: 1fr; }
+  .proofstrip.one img { object-fit: contain; background: #E6E9EC; }
+  .split > div { display: flex; flex-direction: column; } .split .proofstrip { margin-top: auto; padding-top: 28px; }
 
   /* stack scroller */
   .stack { background: var(--bg-2); }
-  .scroller { display: grid; grid-auto-flow: column; grid-auto-columns: min(86vw, 420px); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 48px; padding: 0 20px 18px; scroll-padding: 20px; align-items: start; }
+  .scroller { display: grid; grid-auto-flow: column; grid-auto-columns: min(86vw, 420px); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 48px; padding: 0 20px 18px; scroll-padding: 20px; align-items: stretch; scroll-behavior: smooth; }
   @media (min-width: 768px) { .scroller { padding: 0 40px 18px; scroll-padding: 40px; } }
   @media (min-width: 1408px) { .scroller { padding-left: calc((100vw - var(--max)) / 2 + 40px); scroll-padding-left: calc((100vw - var(--max)) / 2 + 40px); } }
   .panel { scroll-snap-align: start; background: var(--card); display: flex; flex-direction: column; min-height: 100%; }
@@ -112,20 +115,26 @@
   .plans .top { display: flex; justify-content: space-between; gap: 12px; font-weight: 700; }
   .plans .inc { color: var(--muted); margin-top: 4px; }
   .plans .terms { color: var(--muted); margin-top: 10px; font-size: 14px; }
-  .hint { margin-top: 12px; }
+  .stack-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+  .ctrl { display: flex; gap: 8px; }
+  .ctrl button { width: 48px; height: 48px; border: 2px solid var(--ink); background: transparent; color: var(--ink); font: 700 20px/1 "Satoshi", sans-serif; cursor: pointer; }
+  .ctrl button:active { transform: translateY(1px); }
+  .ctrl button:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
 
   /* ikaa proof */
   .proof-grid { display: grid; gap: 40px; margin-top: 48px; }
   .proof-grid > * { min-width: 0; }
   @media (min-width: 1000px) { .proof-grid { grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; } }
   .proof video { width: 100%; background: #000; }
+  @media (min-width: 1000px) { .proof video { position: sticky; top: 96px; } }
   .timeline { list-style: none; }
   .timeline li { display: grid; grid-template-columns: 74px 1fr; gap: 18px; padding: 0 0 30px; }
   .timeline li > div { min-width: 0; }
   .timeline time { font-weight: 900; font-size: 20px; }
   .timeline b { display: block; font-size: 22px; letter-spacing: -0.01em; }
   .timeline span { color: var(--muted); font-size: 16px; }
-  .timeline img { margin-top: 12px; width: 100%; max-width: 460px; }
+  .timeline img { margin-top: 14px; width: 100%; max-width: 480px; border: 1px solid var(--line); }
+  .timeline li:last-child { padding-bottom: 0; }
   .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 16px; margin-top: 64px; }
   .facts b { display: block; font-size: clamp(36px, 5vw, 56px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; }
   .facts span { color: var(--muted); font-size: 15px; }
@@ -238,7 +247,10 @@
             <li><span>Hisaab Kitab, books &amp; GST</span><span class="price">₹799/mo</span></li>
             <li><span>Vaani, WhatsApp &amp; Instagram sales</span><span class="price">from ₹1,999/mo</span></li>
           </ul>
-          <p class="small" style="margin-top:22px">All prices exclude 18% GST.</p>
+          <figure class="proofstrip one">
+            <img src="assets/stack/crop-cart.jpg" alt="Ikaa cart on an Angan store" loading="lazy" width="1000" height="470">
+            <figcaption>Ikaa's cart on Angan. All prices exclude 18% GST.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -329,7 +341,10 @@
         </div>
       </article>
     </div>
-    <div class="wrap"><p class="small hint">Swipe to see all five.</p></div>
+    <div class="wrap stack-ctrl">
+      <p class="small">Swipe or use the arrows to see all five.</p>
+      <div class="ctrl"><button type="button" data-dir="-1" aria-label="Previous tool">&#8592;</button><button type="button" data-dir="1" aria-label="Next tool">&#8594;</button></div>
+    </div>
   </section>
 
   <section class="proof" id="ikaa">
@@ -340,9 +355,9 @@
         <video src="assets/stack/ikaa-order.mp4" poster="assets/stack/ikaa-order-poster.jpg" controls muted playsinline preload="metadata" width="1080" height="1350" aria-label="Video of the Ikaa order moving through all five tools"></video>
         <ol class="timeline">
           <li><time>12:45</time><div><b>Angan</b><span>Two pairs of earrings and gift wrap, ₹1,330, on ikaajewellery.com.</span><img src="assets/stack/crop-cart.jpg" alt="Ikaa cart with two earrings and gift wrap" loading="lazy" width="1000" height="470"></div></li>
-          <li><time>12:47</time><div><b>Setu</b><span>Paid through PayU. Order sent on to Dor and the books.</span></div></li>
-          <li><time>12:47</time><div><b>Hisaab Kitab</b><span>Income booked, GST invoice made, the month's GST file updated.</span></div></li>
-          <li><time>12:47</time><div><b>Dor</b><span>Both pieces marked sold on the website, WhatsApp and Instagram.</span></div></li>
+          <li><time>12:47</time><div><b>Setu</b><span>Paid through PayU. Order sent on to Dor and the books.</span><img src="assets/stack/crop-setu.jpg" alt="Setu payment record" loading="lazy" width="500" height="350"></div></li>
+          <li><time>12:47</time><div><b>Hisaab Kitab</b><span>Income booked, GST invoice made, the month's GST file updated.</span><img src="assets/stack/crop-hk.jpg" alt="Hisaab Kitab entry for the order" loading="lazy" width="500" height="350"></div></li>
+          <li><time>12:47</time><div><b>Dor</b><span>Both pieces marked sold on the website, WhatsApp and Instagram.</span><img src="assets/stack/crop-dor.jpg" alt="Dor stock update on every channel" loading="lazy" width="1000" height="250"></div></li>
         </ol>
       </div>
       <div class="facts">
@@ -428,5 +443,14 @@
     <span>© 2026 Leogo Designs</span>
   </div>
 </footer>
+<script>
+  document.querySelectorAll('.ctrl button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var sc = document.querySelector('.scroller');
+      var panel = sc.querySelector('.panel');
+      sc.scrollBy({ left: Number(b.dataset.dir) * (panel.offsetWidth + 16), behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
