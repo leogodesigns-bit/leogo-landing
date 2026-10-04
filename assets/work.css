@@ -113,3 +113,4 @@ figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
 .b-video video { max-width: 300px; margin-top: 22px; }
 .next { margin-top: 72px; padding: 28px 0; }
 .next b { font-size: clamp(26px, 3.4vw, 40px); }
+.b-video.wide video { max-width: 100%; aspect-ratio: 16 / 9; }

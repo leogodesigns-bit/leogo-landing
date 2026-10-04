@@ -29,7 +29,10 @@ var Work = (function () {
     row: function (b) { return '<div class="b-row"><h2>' + esc(b.title) + '</h2>' + (b.text ? '<p class="lead">' + esc(b.text) + '</p>' : '') + '<div class="grid n' + b.items.length + (b.fit ? ' ' + esc(b.fit) : '') + '">' + b.items.map(function (it) { return fig(it); }).join('') + '</div></div>'; },
     feature: function (b) { return '<div class="b-feature"><h2>' + esc(b.title) + '</h2><div class="grid">' + fig(b.main, 'main') + '<div class="side">' + b.items.map(function (it) { return fig(it); }).join('') + '</div></div></div>'; },
     palette: function (b) { return '<div class="b-palette"><h2>' + esc(b.title) + '</h2><div class="sw">' + b.colors.map(function (c) { return '<div><i style="background:' + esc(c[0]) + '"></i><b>' + esc(c[1]) + '</b><span>' + esc(c[0]) + '</span></div>'; }).join('') + '</div></div>'; },
-    video: function (b) { return '<div class="b-video"><h2>' + esc(b.title) + '</h2><video src="' + esc(b.src) + '" poster="' + esc(b.poster) + '" controls playsinline preload="metadata"></video></div>'; }
+    video: function (b) {
+      var w = b.wide && matchMedia('(min-width: 900px)').matches; // landscape cut on desktop, vertical reel on phones
+      return '<div class="b-video' + (w ? ' wide' : '') + '"><h2>' + esc(b.title) + '</h2><video src="' + esc(w ? b.wide : b.src) + '" poster="' + esc(w ? b.widePoster : b.poster) + '" controls playsinline preload="metadata"></video></div>';
+    }
   };
   function caseStudy(el, slug) {
     projects().then(function (list) {
